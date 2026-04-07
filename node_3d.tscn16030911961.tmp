@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://gin1air5nyno"]
+
+[ext_resource type="Script" uid="uid://b4dy33gq8w0at" path="res://main.gd" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://y4c4lyjcdqyj" path="res://Meshy_AI_Faceted_Radio2_0317180303_texture.glb" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://cdhvjqu7431g7" path="res://Meshy_AI_lampara_3d_0317200120_texture.glb" id="3_a0tk4"]
+[ext_resource type="Texture2D" uid="uid://b0jny5amu7myn" path="res://colonial_table_-_mesa_colonial_4.png" id="4_r3fl7"]
+[ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="5_jka67"]
+
+[sub_resource type="Environment" id="Environment_noarx"]
+background_mode = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
+albedo_texture = ExtResource("4_r3fl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
+albedo_texture = ExtResource("4_r3fl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc5p8"]
+albedo_texture = ExtResource("4_r3fl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsk3o"]
+albedo_texture = ExtResource("4_r3fl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4arys"]
+albedo_texture = ExtResource("4_r3fl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iypd"]
+albedo_texture = ExtResource("4_r3fl7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
+albedo_color = Color(0.30980393, 0.4745098, 0.25882354, 1)
+
+[node name="Node3D" type="Node3D" unique_id=259118455]
+script = ExtResource("1_a202f")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1722360914]
+environment = SubResource("Environment_noarx")
+
+[node name="Meshy_AI_Faceted_Radio2_0317180303_texture" parent="." unique_id=105283617 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6505194, 0.9306605, -2.5321121)
+
+[node name="Meshy_AI_lampara_3d_0317200120_texture" parent="." unique_id=560437964 instance=ExtResource("3_a0tk4")]
+transform = Transform3D(-0.4675127, -0.035417207, -0.88327646, -0.021962505, 0.99935406, -0.028447013, 0.8837134, 0.006099618, -0.46798858, -1.188124, 1.137761, -2.579088)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Meshy_AI_lampara_3d_0317200120_texture" unique_id=1118622959]
+transform = Transform3D(0.5945761, -0.24225429, 0.766676, -0.15186015, 0.90253335, 0.4029538, -0.78956807, -0.3560143, 0.4998362, 0.1027495, 0.18822408, -0.31682628)
+light_energy = 15.0
+shadow_enabled = true
+spot_range = 10.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1718070068]
+transform = Transform3D(1, 0, 0, 0, 0.9999734, -0.0072954115, 0, 0.0072954115, 0.9999734, 0, 0.4072191, -2.3388202)
+use_collision = true
+size = Vector3(3, 0.5, 1)
+
+[node name="Cabaña" type="Node3D" parent="." unique_id=1794369702]
+
+[node name="Suelo" type="CSGBox3D" parent="Cabaña" unique_id=1916399202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037597656, 0, 0.6020508)
+use_collision = true
+size = Vector3(5.9248047, 0.1, 7.129883)
+material = SubResource("StandardMaterial3D_jka67")
+
+[node name="Techo" type="CSGBox3D" parent="Cabaña" unique_id=1703994202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0073242188, 2.949221, 0.60357666)
+use_collision = true
+size = Vector3(5.9853516, 0.1, 7.081421)
+material = SubResource("StandardMaterial3D_i5arm")
+
+[node name="Pared_Trasera" type="CSGBox3D" parent="Cabaña" unique_id=1171114725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077381134, 1.4586914, -2.9661484)
+use_collision = true
+size = Vector3(5.932863, 2.989502, 0.001)
+material = SubResource("StandardMaterial3D_wc5p8")
+
+[node name="Hueco" type="CSGBox3D" parent="Cabaña/Pared_Trasera" unique_id=1224115707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028933525, 0.35677803, -0.25047565)
+operation = 2
+size = Vector3(2.15625, 1, 1)
+
+[node name="Pared_Delantera" type="CSGBox3D" parent="Cabaña" unique_id=1136324822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001003027, 1.4763727, 4.1492367)
+use_collision = true
+size = Vector3(5.9951825, 3.008789, 0.001)
+material = SubResource("StandardMaterial3D_jsk3o")
+
+[node name="Pared_Lateral_Izq" type="CSGBox3D" parent="Cabaña" unique_id=322850858]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.9385476, 1.4594073, 0.59729505)
+use_collision = true
+size = Vector3(0.0107421875, 0.7567627, 1.7730827)
+material = SubResource("StandardMaterial3D_4arys")
+
+[node name="Pared_Lateral_Drch" type="CSGBox3D" parent="Cabaña" unique_id=79923671]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.9519775, 1.4632144, 0.5621047)
+use_collision = true
+size = Vector3(0.0107421875, 0.7546204, 1.7803192)
+material = SubResource("StandardMaterial3D_6iypd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Cabaña" unique_id=986091671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7115114, 0.15674388)
+light_energy = 0.5
+
+[node name="Suelo_Bosque" type="CSGBox3D" parent="." unique_id=27365079]
+transform = Transform3D(0.99974614, 0, 0.022530293, 0, 1, 0, -0.022530293, 0, 0.99974614, -0.03537321, -0.41595018, 0.033896446)
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=181025703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5026999, 0.09431076, -6.4263973)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=352032389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09311795, 0.07172191, -6.0100365)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7" unique_id=1513608285]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4" unique_id=469437723]
+transform = Transform3D(0.99999976, 0.00058926805, 0.0002482783, -0.0005894884, 0.99999946, 0.0008728919, -0.00024775448, -0.0008730407, 0.9999996, -5.9253445, -0.26298487, -1.4873967)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree7" unique_id=544396958]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree7" unique_id=60378105]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree8" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree7" unique_id=652898267]
+transform = Transform3D(0.99999976, 0.00058926805, 0.00024828315, -0.00058949, 0.99999946, 0.000872893, -0.00024778023, -0.00087304227, 1, 5.9536285, 0.17864236, 5.5026526)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree7/PineTree8" unique_id=1874574699]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree7/PineTree8" unique_id=362578964]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree8" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4" unique_id=163533357]
+transform = Transform3D(1.0000001, 0.00058926834, 0.00024826825, -0.0005894884, 0.99999946, 0.0008728919, -0.0002477467, -0.000873041, 0.9999999, -0.64004016, -0.23226893, 0.3165841)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree8" unique_id=1131705737]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7/PineTree4/PineTree8" unique_id=1261820375]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree7" unique_id=222002740]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.4251244, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree8" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1636387562]
+transform = Transform3D(0.99999994, 0.0005892682, 0.00024828129, -0.0005894884, 0.99999946, 0.0008728919, -0.00024775788, -0.0008730409, 0.99999976, 4.3665943, -0.26298487, -0.41426253)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque/PineTree8" unique_id=1404429670]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree8" unique_id=827539511]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree9" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1927644234]
+transform = Transform3D(0.9999999, 0.00058926817, 0.00024828129, -0.0005894884, 0.99999946, 0.0008728919, -0.00024775602, -0.0008730408, 0.9999997, -7.739549, -0.26298487, 1.1115812)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque/PineTree9" unique_id=310103627]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque/PineTree9" unique_id=81426426]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree3" type="MeshInstance3D" parent="." unique_id=917432577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4827518, 0.12104893, -4.6991034)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="." unique_id=1440002646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5026999, 0.09431076, -6.4263973)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree5" type="MeshInstance3D" parent="." unique_id=1488452448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2207127, 0.09431076, -6.653435)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree6" type="MeshInstance3D" parent="." unique_id=739802007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2207127, 0.09431076, -4.5424914)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="." unique_id=306956476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09311795, 0.07172191, -6.0100365)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="PineTree7" unique_id=185636297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5157623, -0.24039602, 0.669621)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="PineTree7" unique_id=1523678378]
+transform = Transform3D(0.99999976, 0.00058926805, 0.0002482783, -0.0005894884, 0.99999946, 0.0008728919, -0.00024775448, -0.0008730407, 0.9999996, -5.9253445, -0.26298487, -1.4873967)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="PineTree7/PineTree7" unique_id=936448279]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="PineTree7/PineTree7" unique_id=2101219452]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree8" type="MeshInstance3D" parent="PineTree7/PineTree7" unique_id=796876215]
+transform = Transform3D(0.99999976, 0.000589268, 0.0002482782, -0.0005894884, 0.99999946, 0.0008728921, -0.00024775445, -0.00087304076, 0.9999996, -2.112502, -0.266712, 5.3574734)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="PineTree7/PineTree7/PineTree8" unique_id=1980666626]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="PineTree7/PineTree7/PineTree8" unique_id=1410538792]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree8" type="MeshInstance3D" parent="PineTree7/PineTree7/PineTree8" unique_id=2041809607]
+transform = Transform3D(0.99999976, 0.00058926846, 0.00024827837, -0.0005894885, 0.99999946, 0.00087289093, -0.00024775427, -0.00087304076, 0.9999996, -0.154109, -0.2546735, -2.3501415)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree4" type="MeshInstance3D" parent="PineTree7/PineTree7/PineTree8/PineTree8" unique_id=1032699214]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 3.586424, 0.28773284, -1.2671313)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree7" type="MeshInstance3D" parent="PineTree7/PineTree7/PineTree8/PineTree8" unique_id=976311181]
+transform = Transform3D(0.99993324, 0, 0.011553823, 0, 1, 0, -0.011553823, 0, 0.99993324, 2.68485, 0.54424775, 1.149024)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree5" type="MeshInstance3D" parent="PineTree7" unique_id=178838640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5157623, -0.24039602, 0.669621)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree6" type="MeshInstance3D" parent="PineTree7" unique_id=553356773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1552296, -0.24039602, -2.1812649)
+mesh = ExtResource("5_jka67")
+
+[node name="PineTree8" type="MeshInstance3D" parent="PineTree7" unique_id=473333178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9426425, -0.26298487, 1.9597406)
+mesh = ExtResource("5_jka67")
