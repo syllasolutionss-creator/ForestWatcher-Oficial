@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b4dy33gq8w0at" path="res://main.gd" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://y4c4lyjcdqyj" path="res://Meshy_AI_Faceted_Radio2_0317180303_texture.glb" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://cdhvjqu7431g7" path="res://Meshy_AI_lampara_3d_0317200120_texture.glb" id="3_a0tk4"]
-[ext_resource type="Texture2D" uid="uid://b0jny5amu7myn" path="res://colonial_table_-_mesa_colonial_4.png" id="4_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://bfppx7h5kvuw1" path="res://Meshy_AI_Bare_Bulb_Pendant_0318174525_texture.glb" id="5_i5arm"]
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://5x4g7pwr2wts" path="res://Meshy_AI_Rustic_Farmhouse_Tabl_0318193457_texture.glb" id="7_wc5p8"]
@@ -30,23 +29,26 @@ size = Vector3(0.9646759, 0.4128151, 0.6623535)
 radius = 0.33251953
 height = 1.0834961
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i0g27"]
+load_path = "res://.godot/imported/colonial_table_-_mesa_colonial_4.png-a62fd9aa5a89ba3bd0668378f77a7e82.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
-albedo_texture = ExtResource("4_r3fl7")
+albedo_texture = SubResource("CompressedTexture2D_i0g27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
-albedo_texture = ExtResource("4_r3fl7")
+albedo_texture = SubResource("CompressedTexture2D_i0g27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc5p8"]
-albedo_texture = ExtResource("4_r3fl7")
+albedo_texture = SubResource("CompressedTexture2D_i0g27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsk3o"]
-albedo_texture = ExtResource("4_r3fl7")
+albedo_texture = SubResource("CompressedTexture2D_i0g27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4arys"]
-albedo_texture = ExtResource("4_r3fl7")
+albedo_texture = SubResource("CompressedTexture2D_i0g27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iypd"]
-albedo_texture = ExtResource("4_r3fl7")
+albedo_texture = SubResource("CompressedTexture2D_i0g27")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
 albedo_color = Color(0.30980393, 0.4745098, 0.25882354, 1)
