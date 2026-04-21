@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bgojxcuhpfd8q"]
+
+[ext_resource type="Script" uid="uid://drtxntpadimek" path="res://jugador.gd" id="1_16k11"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wc5p8"]
+radius = 0.3
+
+[node name="Jugador" type="CharacterBody3D" unique_id=1395660437]
+script = ExtResource("1_16k11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1395344449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5002124, 1.0456394)
+shape = SubResource("CapsuleShape3D_wc5p8")
+
+[node name="Cuello" type="Node3D" parent="." unique_id=1626706452]
+
+[node name="Camera3D" type="Camera3D" parent="Cuello" unique_id=1549474279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0041291714, 2.170884, 1.0437751)
+keep_aspect = 0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cuello/Camera3D" unique_id=964040777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041291714, -2.170884, -1.0437751)
+
+[node name="RayCast3D" type="RayCast3D" parent="Cuello/Camera3D" unique_id=1648395510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041291714, -2.170884, -1.0437751)
