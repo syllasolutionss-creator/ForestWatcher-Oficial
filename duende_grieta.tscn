@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dkvkucioaxhjm"]
+
+[ext_resource type="Script" uid="uid://d1lyue6uauf3s" path="res://duende_grieta.gd" id="1_wqpgm"]
+
+[node name="DuendeGrieta" type="StaticBody3D" unique_id=1628504384]
+script = ExtResource("1_wqpgm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=711477803]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=467986332]
+light_color = Color(1, 0, 0, 1)
+omni_range = 0.1

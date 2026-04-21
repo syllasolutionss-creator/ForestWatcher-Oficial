@@ -51,43 +51,43 @@ radius = 0.2
 height = 3.0
 
 [node name="Tronco_peqeu" type="CSGCylinder3D" parent="." unique_id=364528245]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1045236e-08, -2.7449968)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1045236e-08, -3.4600902)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0
 
 [node name="Tronco_peqeu2" type="CSGCylinder3D" parent="." unique_id=1185734192]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.38108075, -2.7449968)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.38108075, -3.4600902)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0
 
 [node name="Tronco_peqeu3" type="CSGCylinder3D" parent="." unique_id=920047901]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.765, -2.745)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.765, -3.4600933)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0
 
 [node name="Tronco_peqeu4" type="CSGCylinder3D" parent="." unique_id=2071227843]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.148, -2.745)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.148, -3.4600933)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0
 
 [node name="Tronco_peqeu5" type="CSGCylinder3D" parent="." unique_id=313843971]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.495, -2.745)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.495, -3.4600933)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0
 
 [node name="Tronco_peqeu6" type="CSGCylinder3D" parent="." unique_id=820179002]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.857, -2.745)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.857, -3.4600933)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0
 
 [node name="Tronco_peqeu7" type="CSGCylinder3D" parent="." unique_id=1429947771]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.229, -2.745)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.229, -3.4387865)
 use_collision = true
 radius = 0.2
-height = 2.494629
+height = 4.0

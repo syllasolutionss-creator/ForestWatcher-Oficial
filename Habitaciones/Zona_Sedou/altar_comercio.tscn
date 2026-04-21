@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://iaw1iia6k07s"]
+
+[ext_resource type="Script" uid="uid://c3kjab6cjrudw" path="res://Habitaciones/Zona_Sedou/altar_comercio.gd" id="1_vb8vo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64usd"]
+
+[node name="AltarComercio" type="StaticBody3D" unique_id=1561528985]
+script = ExtResource("1_vb8vo")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=978179989]
+
+[node name="CSGBox3D_Pared_Trasera" type="CSGBox3D" parent="CSGCombiner3D" unique_id=456060901]
+
+[node name="CSGBox3D_Base_Comercio" type="CSGBox3D" parent="CSGCombiner3D" unique_id=311623874]
+
+[node name="CSGBox3D_Vigas" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1669684780]
+
+[node name="CSGPolygon3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1497280533]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1124384191]
+shape = SubResource("BoxShape3D_64usd")
