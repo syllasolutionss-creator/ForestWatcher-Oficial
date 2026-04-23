@@ -3,29 +3,29 @@
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w3udf"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="2_qeey7"]
 [ext_resource type="PackedScene" uid="uid://iaw1iia6k07s" path="res://Habitaciones/Zona_Sedou/altar_comercio.tscn" id="3_qeey7"]
+[ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
+[ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
+[ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
+[ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://MaquinaTragaperras.tscn" id="7_ca48y"]
+
+[sub_resource type="Environment" id="Environment_ca48y"]
+background_mode = 2
+ambient_light_source = 2
+ambient_light_color = Color(0.13725491, 0.15686275, 0.16862746, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1910458292]
 
 [node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("1_w3udf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355, 0.33, 1.085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.33, 1.085)
 
 [node name="Muro_Troncos2" parent="." unique_id=737595272 instance=ExtResource("1_w3udf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0.33, -4.415)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.9, 0.33, -4.41)
 
 [node name="Muro_Troncos3" parent="." unique_id=1345142540 instance=ExtResource("1_w3udf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.405, 0.33, 0.945)
-
-[node name="Muro_Troncos4" parent="." unique_id=1011175456 instance=ExtResource("1_w3udf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0.33, 2.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.405, 0.33, 1.1)
 
 [node name="Suelo_Madera" parent="." unique_id=1306016788 instance=ExtResource("2_qeey7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
-
-[node name="MeshInstance3D" type="CSGBox3D" parent="." unique_id=1004227775]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.15, 2.29)
-operation = 2
-use_collision = true
-size = Vector3(1, 2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9964762, 0.0065364838, -0.97140086)
 
 [node name="AltarComercio" parent="." unique_id=1561528985 instance=ExtResource("3_qeey7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -4)
@@ -33,3 +33,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -4)
 [node name="CSGBox3D" type="CSGBox3D" parent="AltarComercio" unique_id=79794215]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, -0.685)
 operation = 2
+
+[node name="Puerta" parent="." unique_id=772702218 instance=ExtResource("4_4te1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5638545, 1.3188329, 2.5989141)
+
+[node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("5_lvvyy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.955, 0.33, 2.6)
+
+[node name="HUD" parent="." unique_id=304741105 instance=ExtResource("6_elxbx")]
+
+[node name="MaquinaTragaperras" parent="." unique_id=448147152 instance=ExtResource("7_ca48y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31244266, 1.4255192, -0.77660275)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1772741555]
+light_energy = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1197277475]
+environment = SubResource("Environment_ca48y")

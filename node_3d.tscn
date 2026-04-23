@@ -29,26 +29,23 @@ size = Vector3(0.9646759, 0.4128151, 0.6623535)
 radius = 0.33251953
 height = 1.0834961
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i0g27"]
-load_path = "res://.godot/imported/colonial_table_-_mesa_colonial_4.png-a62fd9aa5a89ba3bd0668378f77a7e82.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
-albedo_texture = SubResource("CompressedTexture2D_i0g27")
+albedo_color = Color(0.5882353, 0.43529412, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
-albedo_texture = SubResource("CompressedTexture2D_i0g27")
+albedo_color = Color(0.5882353, 0.43529412, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc5p8"]
-albedo_texture = SubResource("CompressedTexture2D_i0g27")
+albedo_color = Color(0.5882353, 0.43529412, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsk3o"]
-albedo_texture = SubResource("CompressedTexture2D_i0g27")
+albedo_color = Color(0.5882353, 0.43529412, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4arys"]
-albedo_texture = SubResource("CompressedTexture2D_i0g27")
+albedo_color = Color(0.5882353, 0.43529412, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iypd"]
-albedo_texture = SubResource("CompressedTexture2D_i0g27")
+albedo_color = Color(0.5882353, 0.43529412, 0.2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
 albedo_color = Color(0.30980393, 0.4745098, 0.25882354, 1)

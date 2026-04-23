@@ -1,23 +1,37 @@
 extends StaticBody3D
 
-var precio_apuesta = 10
+# Configuración de la máquina
+var precio_partida = 10
+var premio = 50
 
 func interactuar():
-	if Global.dinero >= precio_apuesta:
-		Global.modificar_dinero(-precio_apuesta)
-		apostar()
+	# 1. Comprobar si el jugador tiene suficiente dinero
+	if Global.monedas >= precio_partida:
+		# Cobrar el precio de la partida
+		Global.monedas -= precio_partida
+		print("Has pagado 10 monedas. Girando...")
+		
+		# Ejecutar el juego
+		jugar_tragaperras()
 	else:
-		print("No tienes suficiente dinero para jugar...")
+		# Si no tiene dinero, no dejamos jugar
+		print("No tienes suficientes monedas. ¡Necesitas 10!")
 
-func apostar():
-	# Generamos un número al azar entre 0 y 100
-	var suerte = randi() % 100
+func jugar_tragaperras():
+	# 2. Generar números aleatorios (0, 1 o 2)
+	var rodillo1 = randi() % 3
+	var rodillo2 = randi() % 3
+	var rodillo3 = randi() % 3
 	
-	if suerte > 60: # 40% de probabilidad de ganar
-		var premio = 25
-		Global.modificar_dinero(premio)
-		print("¡HAS GANADO! +", premio)
-		# Aquí podrías activar una luz verde
+	print("Resultado: ", rodillo1, " - ", rodillo2, " - ", rodillo3)
+	
+	# 3. Comprobar si hay premio (si los 3 números son iguales)
+	if rodillo1 == rodillo2 and rodillo2 == rodillo3:
+		Global.monedas += premio
+		print("¡JACKPOT! Has ganado ", premio, " monedas.")
 	else:
-		print("Has perdido... El Duende se ríe de ti.")
-		# Aquí podrías restar un poco de vida al Vigilante
+		print("Mala suerte, has perdido las 10 monedas.")
+
+# Esta función es la que llama tu script del jugador
+func obtener_texto_interaccion() -> String:
+	return "[E] - Jugar tragaperras (Cuesta 10)"

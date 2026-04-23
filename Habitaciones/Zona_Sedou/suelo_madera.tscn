@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doplmlh2xamqh" path="res://Habitaciones/Zona_Sedou/texturas/uploads_files_2002640_Wooden_floor_textures/Wooden_floor_AO.tga" id="2_h3i2c"]
 [ext_resource type="Texture2D" uid="uid://4uffjmwabirr" path="res://Habitaciones/Zona_Sedou/texturas/uploads_files_2002640_Wooden_floor_textures/Wooden_floor_Normal.tga" id="3_g7ged"]
 [ext_resource type="Texture2D" uid="uid://cg0ptyxb4x6xt" path="res://Habitaciones/Zona_Sedou/texturas/uploads_files_2002640_Wooden_floor_textures/Wooden_floor_Roughness.tga" id="4_kk4pa"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://jugador_importado/player.tscn" id="5_iiaaf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jw8y"]
 albedo_texture = ExtResource("1_bkmuw")
@@ -13,9 +14,16 @@ normal_texture = ExtResource("3_g7ged")
 ao_enabled = true
 ao_texture = ExtResource("2_h3i2c")
 
-[node name="Suelo_Madera" type="Node3D" unique_id=1306016788]
+[sub_resource type="BoxShape3D" id="BoxShape3D_iiaaf"]
+size = Vector3(7.3, 0.2, 7.3)
+
+[node name="Suelo_Madera" type="StaticBody3D" unique_id=714591706]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1808333701]
-use_collision = true
 size = Vector3(7.3, 0.2, 7.3)
 material = SubResource("StandardMaterial3D_2jw8y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=596773032]
+shape = SubResource("BoxShape3D_iiaaf")
+
+[node name="Player" parent="." unique_id=576785281 instance=ExtResource("5_iiaaf")]

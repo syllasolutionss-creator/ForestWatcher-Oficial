@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ct3uc3jr7c647"]
+
+[ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w3udf"]
+[ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="2_qeey7"]
+[ext_resource type="PackedScene" uid="uid://iaw1iia6k07s" path="res://Habitaciones/Zona_Sedou/altar_comercio.tscn" id="3_qeey7"]
+[ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
+
+[node name="Node3D" type="Node3D" unique_id=1910458292]
+
+[node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("1_w3udf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355, 0.33, 1.085)
+
+[node name="Muro_Troncos2" parent="." unique_id=737595272 instance=ExtResource("1_w3udf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0.33, -4.415)
+
+[node name="Muro_Troncos3" parent="." unique_id=1345142540 instance=ExtResource("1_w3udf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.405, 0.33, 0.945)
+
+[node name="Muro_Troncos4" parent="." unique_id=1011175456 instance=ExtResource("1_w3udf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0.33, 2.4)
+
+[node name="Suelo_Madera" parent="." unique_id=1306016788 instance=ExtResource("2_qeey7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="AltarComercio" parent="." unique_id=1561528985 instance=ExtResource("3_qeey7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -4)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="AltarComercio" unique_id=79794215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, -0.685)
+operation = 2
+
+[node name="Puerta" parent="." unique_id=772702218 instance=ExtResource("4_4te1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.3, 2)

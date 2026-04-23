@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bquiprh0yfjjx"]
+
+[ext_resource type="Script" uid="uid://c7j164evpsb33" path="res://Habitaciones/Zona_Sedou/hud.gd" id="1_5h0hf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=304741105]
+script = ExtResource("1_5h0hf")
+
+[node name="LabelDinero" type="Label" parent="." unique_id=971990378]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Dinero: 0"
