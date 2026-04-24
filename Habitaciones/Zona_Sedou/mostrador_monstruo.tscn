@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bvdofr4xsaklq"]
+
+[ext_resource type="Script" uid="uid://bbsw82bdu5502" path="res://Habitaciones/Zona_Sedou/mostrador_monstruo.gd" id="1_coret"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4f5mj"]
+size = Vector3(2, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_coret"]
+size = Vector3(2, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4f5mj"]
+size = Vector3(2, 1, 1.4660645)
+
+[node name="MostradorMonstruo" type="StaticBody3D" unique_id=1981371365]
+script = ExtResource("1_coret")
+
+[node name="StaticBody3D" type="MeshInstance3D" parent="." unique_id=543317133]
+mesh = SubResource("BoxMesh_4f5mj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1138495992]
+shape = SubResource("BoxShape3D_coret")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=708372735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2298228, 0)
+light_color = Color(0.4509804, 0.5764706, 0.7019608, 1)
+omni_range = 1.132
+
+[node name="ZonaInteraccion" type="Area3D" parent="." unique_id=31143078]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaInteraccion" unique_id=1301119164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4678955)
+shape = SubResource("BoxShape3D_4f5mj")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1754126103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7000601, 0)
+visible = false
+text = "[E] HABLAR"
+font_size = 22
+
+[connection signal="body_entered" from="ZonaInteraccion" to="." method="_on_zona_interaccion_body_entered"]
+[connection signal="body_exited" from="ZonaInteraccion" to="." method="_on_zona_interaccion_body_exited"]

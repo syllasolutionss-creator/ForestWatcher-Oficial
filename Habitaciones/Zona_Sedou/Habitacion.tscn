@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w3udf"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="2_qeey7"]
-[ext_resource type="PackedScene" uid="uid://iaw1iia6k07s" path="res://Habitaciones/Zona_Sedou/altar_comercio.tscn" id="3_qeey7"]
 [ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
 [ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
 [ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://MaquinaTragaperras.tscn" id="7_ca48y"]
 [ext_resource type="Texture2D" uid="uid://rleabbyw4trx" path="res://Habitaciones/Zona_Sedou/Imagenes/Carta_gambling.jpg" id="8_h65u6"]
+[ext_resource type="PackedScene" uid="uid://bvdofr4xsaklq" path="res://Habitaciones/Zona_Sedou/mostrador_monstruo.tscn" id="8_t4237"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]
 albedo_texture = ExtResource("8_h65u6")
@@ -29,13 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.405, 0.33, 1.1)
 [node name="Suelo_Madera" parent="." unique_id=1306016788 instance=ExtResource("2_qeey7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9964762, 0.0065364838, -0.97140086)
 
-[node name="AltarComercio" parent="." unique_id=1561528985 instance=ExtResource("3_qeey7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -4)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="AltarComercio" unique_id=79794215]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, -0.685)
-operation = 2
-
 [node name="Puerta" parent="." unique_id=772702218 instance=ExtResource("4_4te1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5638545, 1.3188329, 2.5989141)
 
@@ -54,3 +47,6 @@ light_energy = 0.1
 [node name="CartelPremios" type="MeshInstance3D" parent="." unique_id=440043599]
 transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -0.2648139, 1.653358, 0.5330676)
 mesh = SubResource("QuadMesh_sb8h8")
+
+[node name="MostradorMonstruo" parent="." unique_id=1981371365 instance=ExtResource("8_t4237")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9874487, 0.6183698, -3.8071911)
