@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://8iijemfohb1d"]
 
-[ext_resource type="Script" uid="uid://bwve5k70rt3gb" path="res://Habitaciones/Zona_Jan/new_script.gd" id="1_hu321"]
+[ext_resource type="Script" path="res://Habitaciones/Zona_Jan/new_script.gd" id="1_hu321"]
 [ext_resource type="PackedScene" uid="uid://dd4uv1j5fwd4n" path="res://Habitaciones/Zona_Jan/old_bath.glb" id="2_lx1xs"]
 [ext_resource type="PackedScene" uid="uid://dghhmoevltu22" path="res://Habitaciones/Zona_Jan/toilet.glb" id="3_hmxjg"]
-[ext_resource type="Script" uid="uid://c40jtahbfry8o" path="res://Habitaciones/Zona_Jan/area_3d.gd" id="4_f8x6c"]
+[ext_resource type="Script" path="res://Habitaciones/Zona_Jan/area_3d.gd" id="4_f8x6c"]
 [ext_resource type="PackedScene" uid="uid://dp7cel1uk5vr0" path="res://Habitaciones/Zona_Jan/bathroom_sink__low-poly__game-ready.glb" id="5_mqqyn"]
 [ext_resource type="AudioStream" uid="uid://dg3yu11kyg8ac" path="res://assets/ambiente_fondo.mp3" id="6_tpyjn"]
 [ext_resource type="PackedScene" uid="uid://5bjx8ic75d8j" path="res://assets/wooden_floor.glb" id="7_tqp3k"]
