@@ -1,5 +1,21 @@
 [gd_scene format=3 uid="uid://cdn6832din2ba"]
 
+[ext_resource type="Texture2D" uid="uid://yiiko8svrfkf" path="res://Habitaciones/Zona_Sedou/texturas/bark_willow_2k (1)/textures/bark_willow_diff_2k.jpg" id="1_4c54a"]
+[ext_resource type="Texture2D" uid="uid://fen8ptieqgxp" path="res://Habitaciones/Zona_Sedou/texturas/bark_willow_2k (1)/textures/bark_willow_ao_2k.jpg" id="2_5d1qc"]
+[ext_resource type="Texture2D" uid="uid://bbcpmww333ha6" path="res://Habitaciones/Zona_Sedou/texturas/bark_willow_2k (1)/textures/bark_willow_nor_gl_2k.jpg" id="3_0th7u"]
+[ext_resource type="Texture2D" uid="uid://dcxvm7dj7ee6w" path="res://Habitaciones/Zona_Sedou/texturas/bark_willow_2k (1)/textures/bark_willow_rough_2k.jpg" id="4_0f2mx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_375v5"]
+albedo_texture = ExtResource("1_4c54a")
+roughness_texture = ExtResource("4_0f2mx")
+normal_enabled = true
+normal_texture = ExtResource("3_0th7u")
+ao_enabled = true
+ao_texture = ExtResource("2_5d1qc")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" unique_id=1561141313]
 use_collision = true
 
@@ -8,90 +24,105 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D8" type="CSGCylinder3D" parent="." unique_id=1064572012]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.8565266, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D9" type="CSGCylinder3D" parent="." unique_id=1939768361]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.2285218, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="." unique_id=1063686465]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.49486, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1230183882]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=233094800]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.38143647, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D5" type="CSGCylinder3D" parent="." unique_id=848777836]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.7647219, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="CSGCylinder3D6" type="CSGCylinder3D" parent="." unique_id=1654158241]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0014565587, 1.1484679, 0)
 use_collision = true
 radius = 0.2
 height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu" type="CSGCylinder3D" parent="." unique_id=282706505]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1045236e-08, -3.4600902)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu2" type="CSGCylinder3D" parent="." unique_id=693252531]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.38108075, -3.4600902)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu3" type="CSGCylinder3D" parent="." unique_id=1167298048]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.765, -3.4600933)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu4" type="CSGCylinder3D" parent="." unique_id=427339596]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.148, -3.4600933)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu5" type="CSGCylinder3D" parent="." unique_id=453076770]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.495, -3.4600933)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu6" type="CSGCylinder3D" parent="." unique_id=427913625]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.857, -3.4600933)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu7" type="CSGCylinder3D" parent="." unique_id=2142346427]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.229, -3.4387865)
 use_collision = true
 radius = 0.2
 height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Cuchillo" type="CSGBox3D" parent="." unique_id=943754894]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, -1.8)

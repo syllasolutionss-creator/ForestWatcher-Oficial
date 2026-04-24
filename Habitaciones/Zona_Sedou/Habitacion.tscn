@@ -7,11 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
 [ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
 [ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://MaquinaTragaperras.tscn" id="7_ca48y"]
+[ext_resource type="Texture2D" uid="uid://rleabbyw4trx" path="res://Habitaciones/Zona_Sedou/Imagenes/Carta_gambling.jpg" id="8_h65u6"]
 
-[sub_resource type="Environment" id="Environment_ca48y"]
-background_mode = 2
-ambient_light_source = 2
-ambient_light_color = Color(0.13725491, 0.15686275, 0.16862746, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]
+albedo_texture = ExtResource("8_h65u6")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sb8h8"]
+material = SubResource("StandardMaterial3D_t4237")
 
 [node name="Node3D" type="Node3D" unique_id=1910458292]
 
@@ -46,7 +48,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.95
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31244266, 1.4255192, -0.77660275)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1772741555]
+visible = false
 light_energy = 0.1
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1197277475]
-environment = SubResource("Environment_ca48y")
+[node name="CartelPremios" type="MeshInstance3D" parent="." unique_id=440043599]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -0.2648139, 1.653358, 0.5330676)
+mesh = SubResource("QuadMesh_sb8h8")
