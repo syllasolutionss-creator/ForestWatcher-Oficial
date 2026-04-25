@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://btq46ge41h"]
 
 [ext_resource type="Script" uid="uid://3kd6ovbesxxp" path="res://maquina_gambling.gd" id="1_i4ubv"]
+[ext_resource type="Texture2D" uid="uid://c4gpdunsx35pj" path="res://Habitaciones/Zona_Sedou/Imagenes/Crea_un_lienzo_202604241254.jpeg" id="2_g1qwb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i7gt0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npi81"]
+albedo_texture = ExtResource("2_g1qwb")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7diww"]
+material = SubResource("StandardMaterial3D_npi81")
+size = Vector2(1, 2)
 
 [node name="MaquinaTragaperras" type="StaticBody3D" unique_id=448147152]
 script = ExtResource("1_i4ubv")
@@ -13,3 +21,7 @@ shape = SubResource("BoxShape3D_i7gt0")
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1791654143]
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1928446070]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=908459882]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_7diww")
