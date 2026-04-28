@@ -2,21 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dde2mk6e1ft"
-path.s3tc="res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+uid="uid://d2ngxlndayoni"
+valid=false
 
 [deps]
 
-source_file="res://assets/ficha_arthur_glitch.png"
-dest_files=["res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"]
+source_file="res://Habitaciones/Zona_Sedou/Slot_Machine_with_Touch_Screen_v1_L1.1234a3e3080-cf0a-415e-bb39-2646c266cc20/Slot_Machine_with_Touch_Screen_v1_L1.1234a3e3080-cf0a-415e-bb39-2646c266cc20/Blank image.jpg"
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +19,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

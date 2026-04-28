@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyt66p11t2beh"
+path="res://.godot/imported/18832_Slot_Machine_with_Touch_Screen_v1_NEW.obj-6754191409ec49445f663372df0cb782.mesh"
+
+[deps]
+
+files=["res://.godot/imported/18832_Slot_Machine_with_Touch_Screen_v1_NEW.obj-6754191409ec49445f663372df0cb782.mesh"]
+
+source_file="res://Habitaciones/Zona_Sedou/Slot_Machine_with_Touch_Screen_v1_L1.1234a3e3080-cf0a-415e-bb39-2646c266cc20/Slot_Machine_with_Touch_Screen_v1_L1.1234a3e3080-cf0a-415e-bb39-2646c266cc20/18832_Slot_Machine_with_Touch_Screen_v1_NEW.obj"
+dest_files=["res://.godot/imported/18832_Slot_Machine_with_Touch_Screen_v1_NEW.obj-6754191409ec49445f663372df0cb782.mesh", "res://.godot/imported/18832_Slot_Machine_with_Touch_Screen_v1_NEW.obj-6754191409ec49445f663372df0cb782.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

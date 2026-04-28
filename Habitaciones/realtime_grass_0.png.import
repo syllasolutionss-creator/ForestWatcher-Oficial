@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dde2mk6e1ft"
-path.s3tc="res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"
+uid="uid://bjrv72wqfasdx"
+path.s3tc="res://.godot/imported/realtime_grass_0.png-a623304f2ed3dc86a971338e57d556a8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "607ba4c79e0770fc5dd22a18d1fad7b5"
+}
 
 [deps]
 
-source_file="res://assets/ficha_arthur_glitch.png"
-dest_files=["res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"]
+source_file="res://Habitaciones/realtime_grass_0.png"
+dest_files=["res://.godot/imported/realtime_grass_0.png-a623304f2ed3dc86a971338e57d556a8.s3tc.ctex"]
 
 [params]
 

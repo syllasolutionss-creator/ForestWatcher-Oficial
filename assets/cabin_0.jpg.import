@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dde2mk6e1ft"
-path.s3tc="res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"
+uid="uid://bimoy43yskubw"
+path.s3tc="res://.godot/imported/cabin_0.jpg-11fc84a92095c6c268bc22ff46e0669b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "7fed8a36a51bc9560a064788010053dc"
+}
 
 [deps]
 
-source_file="res://assets/ficha_arthur_glitch.png"
-dest_files=["res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"]
+source_file="res://assets/cabin_0.jpg"
+dest_files=["res://.godot/imported/cabin_0.jpg-11fc84a92095c6c268bc22ff46e0669b.s3tc.ctex"]
 
 [params]
 

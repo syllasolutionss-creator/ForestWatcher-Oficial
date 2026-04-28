@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dde2mk6e1ft"
-path.s3tc="res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"
+uid="uid://cjbwmqoxptpcj"
+path.s3tc="res://.godot/imported/wooden_double_hung_window (1)_3.png-3244bb9d76271d69d4e4e9418c311006.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "af8e355853269a0247e3e1358c4314c6"
+}
 
 [deps]
 
-source_file="res://assets/ficha_arthur_glitch.png"
-dest_files=["res://.godot/imported/ficha_arthur_glitch.png-f218e8b3e93082ea5eb99a64b34d06e3.s3tc.ctex"]
+source_file="res://Habitaciones/wooden_double_hung_window (1)_3.png"
+dest_files=["res://.godot/imported/wooden_double_hung_window (1)_3.png-3244bb9d76271d69d4e4e9418c311006.s3tc.ctex"]
 
 [params]
 
