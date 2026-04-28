@@ -1,21 +1,119 @@
 [gd_scene format=3 uid="uid://iaw1iia6k07s"]
 
 [ext_resource type="Script" uid="uid://c3kjab6cjrudw" path="res://Habitaciones/Zona_Sedou/altar_comercio.gd" id="1_vb8vo"]
+[ext_resource type="PackedScene" uid="uid://yjt5xmuokvfp" path="res://Habitaciones/Zona_Sedou/cafe.tscn" id="3_bjnlr"]
+[ext_resource type="PackedScene" uid="uid://dx7gefioud0dc" path="res://Habitaciones/Zona_Sedou/cajadecigarro_sedou.tscn" id="3_vtok6"]
+[ext_resource type="PackedScene" uid="uid://c0df07e04fbks" path="res://Habitaciones/Zona_Sedou/Objetosen3D/Meshy_AI_Thatched_Log_Hut_0427211507_texture.glb" id="4_bjnlr"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_64usd"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtok6"]
+size = Vector3(1.9378815, 1.2587891, 1)
 
-[node name="AltarComercio" type="StaticBody3D" unique_id=1561528985]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjnlr"]
+size = Vector3(2.187561, 2.0408936, 2.1251822)
+
+[sub_resource type="Animation" id="Animation_bjnlr"]
+resource_name = "Parpadeo"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="Animation" id="Animation_arks5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xoecg"]
+_data = {
+&"Parpadeo": SubResource("Animation_bjnlr"),
+&"RESET": SubResource("Animation_arks5")
+}
+
+[node name="AltarComercio" type="StaticBody3D" unique_id=1561528985 node_paths=PackedStringArray("aviso", "detector", "spawn_point")]
 script = ExtResource("1_vb8vo")
+aviso = NodePath("Aviso")
+detector = NodePath("Detector")
+spawn_point = NodePath("SpawnPoint")
+items_posibles = Array[PackedScene]([ExtResource("3_vtok6"), ExtResource("3_bjnlr")])
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=978179989]
+[node name="Meshy_AI_Thatched_Log_Hut_0427211507_texture" parent="." unique_id=189372158 instance=ExtResource("4_bjnlr")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="CSGBox3D_Pared_Trasera" type="CSGBox3D" parent="CSGCombiner3D" unique_id=456060901]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2011619612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01750946, -0.34716797, 0)
+shape = SubResource("BoxShape3D_vtok6")
 
-[node name="CSGBox3D_Base_Comercio" type="CSGBox3D" parent="CSGCombiner3D" unique_id=311623874]
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=661603950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62158966, 0.2035085)
 
-[node name="CSGBox3D_Vigas" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1669684780]
+[node name="Detector" type="Area3D" parent="." unique_id=1062299265]
 
-[node name="CSGPolygon3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1497280533]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detector" unique_id=723764102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.097877145, -0.105651855, 0.58773875)
+shape = SubResource("BoxShape3D_bjnlr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1124384191]
-shape = SubResource("BoxShape3D_64usd")
+[node name="Aviso" type="Label3D" parent="." unique_id=1853026069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51853925, 0.49537563)
+visible = false
+text = "[E] Sacrificar"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=713735513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1757347, 0, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+omni_range = 0.2
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=404694066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12485382, 0, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+omni_range = 0.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1584454036]
+libraries/ = SubResource("AnimationLibrary_xoecg")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]

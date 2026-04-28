@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dx7gefioud0dc"]
+
+[ext_resource type="Script" uid="uid://3v0blg1w7eph" path="res://Habitaciones/Zona_Sedou/cajadecigarro_sedou.gd" id="1_jh00b"]
+[ext_resource type="PackedScene" uid="uid://bxw4ske47yaee" path="res://Habitaciones/Zona_Sedou/cigarocaja.tscn" id="1_oso3p"]
+[ext_resource type="AudioStream" uid="uid://dia72qqmalk3y" path="res://Habitaciones/Zona_Sedou/AUDIOS_SEDOU/cegaroamego.mp3" id="3_jh00b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xl4nq"]
+size = Vector3(0.2732544, 0.5307617, 0.28833008)
+
+[node name="Cigarro" type="RigidBody3D" unique_id=560065677]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_jh00b")
+
+[node name="Sketchfab_Scene" parent="." unique_id=867538417 instance=ExtResource("1_oso3p")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=320174668]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.010925293, 0.5208697, -0.2772841)
+shape = SubResource("BoxShape3D_xl4nq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1045280119]
+stream = ExtResource("3_jh00b")

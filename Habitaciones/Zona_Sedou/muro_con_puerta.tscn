@@ -40,6 +40,20 @@ radius = 0.2
 height = 3.0
 material = SubResource("StandardMaterial3D_375v5")
 
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="." unique_id=1705220259]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.5870597, 0)
+use_collision = true
+radius = 0.2
+height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="." unique_id=1282304952]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.936009, 0)
+use_collision = true
+radius = 0.2
+height = 3.0
+material = SubResource("StandardMaterial3D_375v5")
+
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="." unique_id=1063686465]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.49486, 0)
 use_collision = true
@@ -119,6 +133,20 @@ material = SubResource("StandardMaterial3D_375v5")
 
 [node name="Tronco_peqeu7" type="CSGCylinder3D" parent="." unique_id=2142346427]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.229, -3.4387865)
+use_collision = true
+radius = 0.2
+height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
+
+[node name="Tronco_peqeu8" type="CSGCylinder3D" parent="." unique_id=1225572549]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.5891943, -3.4387865)
+use_collision = true
+radius = 0.2
+height = 4.0
+material = SubResource("StandardMaterial3D_375v5")
+
+[node name="Tronco_peqeu9" type="CSGCylinder3D" parent="." unique_id=177646277]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.936, -3.439)
 use_collision = true
 radius = 0.2
 height = 4.0

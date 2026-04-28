@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://csfotbchehdm4"]
-
-[node name="Node3D" type="Node3D" unique_id=760208477]
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=378197300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxw4ske47yaee"]
+
+[ext_resource type="PackedScene" uid="uid://bunxecg8n5ws8" path="res://Habitaciones/Zona_Sedou/Objetosen3D/marlboro_pack_of_20_cigarettes.glb" id="1_2i2ur"]
+
+[node name="Sketchfab_Scene" unique_id=867538417 instance=ExtResource("1_2i2ur")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

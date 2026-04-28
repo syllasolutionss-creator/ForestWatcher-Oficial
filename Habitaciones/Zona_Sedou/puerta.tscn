@@ -1,25 +1,17 @@
 [gd_scene format=3 uid="uid://bfthprpogrh6h"]
 
-[ext_resource type="Script" uid="uid://cq1ntqjio82ea" path="res://puerta.gd" id="1_bek8y"]
 [ext_resource type="Script" uid="uid://ccub3lfjujcg0" path="res://Habitaciones/Zona_Sedou/pivote.gd" id="1_ie64f"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie64f"]
-albedo_color = Color(0.6, 0, 0.06666667, 0)
+[ext_resource type="PackedScene" uid="uid://b732y3movso48" path="res://Habitaciones/Zona_Sedou/Objetosen3D/door.glb" id="2_hyfoq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_04wq8"]
-size = Vector3(1.2, 2.2, 0.1)
+size = Vector3(1.1605469, 2.2, 0.1)
 
 [node name="Pivote" type="Node3D" unique_id=1328967009]
 script = ExtResource("1_ie64f")
 
-[node name="Puerta" type="StaticBody3D" parent="." unique_id=772702218]
-script = ExtResource("1_bek8y")
+[node name="Sketchfab_Scene" parent="." unique_id=1881086428 instance=ExtResource("2_hyfoq")]
+transform = Transform3D(0.03, 0, 0, 0, 0.024, 0, 0, 0, 0.028, 0.8893664, -1.0691792, 0.22305652)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Puerta" unique_id=597414910]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
-size = Vector3(1.2, 2.2, 0.1)
-material = SubResource("StandardMaterial3D_ie64f")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puerta" unique_id=1231635016]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene" unique_id=1231635016]
+transform = Transform3D(33.333336, 0, 0, 0, 41.666664, 0, 0, 0, 35.714283, -10.296341, 44.689613, -7.307263)
 shape = SubResource("BoxShape3D_04wq8")

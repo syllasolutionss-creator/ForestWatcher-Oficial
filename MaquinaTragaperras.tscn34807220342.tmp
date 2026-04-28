@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://btq46ge41h"]
+
+[ext_resource type="Script" uid="uid://cfquxv4xy437w" path="res://maquina_tragaperras.gd" id="1_npi81"]
+[ext_resource type="PackedScene" uid="uid://bx5f6xf3y5h7x" path="res://Habitaciones/Zona_Sedou/maquina_gambling_sedou.glb" id="2_g1qwb"]
+[ext_resource type="Script" uid="uid://bb7l51tg2el60" path="res://area_3d.gd" id="2_npi81"]
+[ext_resource type="Texture2D" uid="uid://c4gpdunsx35pj" path="res://Habitaciones/Zona_Sedou/Imagenes/Crea_un_lienzo_202604241254.jpeg" id="4_7diww"]
+[ext_resource type="Script" uid="uid://b7ykjthn7m0vy" path="res://label_3d.gd" id="4_pi7jr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g1qwb"]
+size = Vector3(0.507843, 0.60583496, 0.38555908)
+
+[sub_resource type="Animation" id="Animation_i4ubv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.134464, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g1qwb"]
+resource_name = "tirar_palanca"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.001, 0.3, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.134464, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_npi81"]
+_data = {
+&"RESET": SubResource("Animation_i4ubv"),
+&"tirar_palanca": SubResource("Animation_g1qwb")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npi81"]
+size = Vector3(0.508, 0.606, 0.47467384)
+
+[node name="MaquinaTragaperras" type="StaticBody3D" unique_id=448147152]
+script = ExtResource("1_npi81")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313899458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012527466, -0.06719971, -0.010528564)
+shape = SubResource("BoxShape3D_g1qwb")
+debug_fill = false
+
+[node name="maquina_gambling_sedou" parent="." unique_id=1196057935 instance=ExtResource("2_g1qwb")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+
+[node name="Object_6_001" parent="maquina_gambling_sedou/maquina_de_gambling_sedou/c62f7d9dce9e482e9d32f51ddcbb18a2_fbx/Object_2/RootNode/Plane010/Object_5" parent_id_path=PackedInt32Array(1196057935, 569399455) index="1" unique_id=2049348239]
+transform = Transform3D(1, 0, 0, 0, 0.42261824, -0.9063078, 0, 0.9063078, 0.42261824, 243.2565, -52.88916, -257.33374)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1501927853]
+root_node = NodePath("../maquina_gambling_sedou/maquina_de_gambling_sedou/c62f7d9dce9e482e9d32f51ddcbb18a2_fbx/Object_2/RootNode/Plane010/Object_5/Object_6_001")
+libraries/ = SubResource("AnimationLibrary_npi81")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=730813594]
+script = ExtResource("2_npi81")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=534123540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, -0.067, 0.03433691)
+shape = SubResource("BoxShape3D_npi81")
+
+[node name="Label3D" type="Label3D" parent="Area3D" unique_id=1436175448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44215328, 0)
+text = "Presiona [E]"
+font_size = 18
+script = ExtResource("4_pi7jr")
+
+[node name="Rodillo1" type="Sprite3D" parent="." unique_id=2058560604]
+transform = Transform3D(0.008, 0, 8.326673e-17, 0, 0.008, 0, -8.326673e-17, 0, 0.008, -0.09205836, 0.100685954, 0.08015315)
+texture = ExtResource("4_7diww")
+region_enabled = true
+region_rect = Rect2(0, 0, 874, 688)
+
+[node name="Rodillo2" type="Sprite3D" parent="." unique_id=640597810]
+transform = Transform3D(0.008, 0, 8.326673e-17, 0, 0.008, 0, -8.326673e-17, 0, 0.008, -0.032886494, 0.100685954, 0.08015315)
+texture = ExtResource("4_7diww")
+region_enabled = true
+region_rect = Rect2(0, 0, 874, 688)
+
+[node name="Rodillo3" type="Sprite3D" parent="." unique_id=1463033927]
+transform = Transform3D(0.008, 0, 8.326673e-17, 0, 0.008, 0, -8.326673e-17, 0, 0.008, 0.02719985, 0.100685954, 0.08015315)
+texture = ExtResource("4_7diww")
+region_enabled = true
+region_rect = Rect2(0, 9, 874, 688)
+
+[editable path="maquina_gambling_sedou"]

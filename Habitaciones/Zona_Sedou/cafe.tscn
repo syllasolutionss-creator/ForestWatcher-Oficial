@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://yjt5xmuokvfp"]
+
+[ext_resource type="Script" uid="uid://ddn5mso27c6e0" path="res://Habitaciones/Zona_Sedou/cafe.gd" id="1_8uip2"]
+[ext_resource type="PackedScene" uid="uid://cadcf2j2ardfv" path="res://Habitaciones/Zona_Sedou/Objetosen3D/coffee.glb" id="1_nfm7l"]
+[ext_resource type="AudioStream" uid="uid://db7lb5pvpukt2" path="res://Habitaciones/Zona_Sedou/AUDIOS_SEDOU/audio_cafe_bebidas.mp3" id="3_uf05p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfm7l"]
+
+[node name="Café" type="RigidBody3D" unique_id=2124543207]
+script = ExtResource("1_8uip2")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1646277502 instance=ExtResource("1_nfm7l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=684580773]
+shape = SubResource("BoxShape3D_nfm7l")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=990505920]
+stream = ExtResource("3_uf05p")

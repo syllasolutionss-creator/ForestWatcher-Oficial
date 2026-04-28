@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://ct3uc3jr7c647"]
+
+[ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w3udf"]
+[ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="2_qeey7"]
+[ext_resource type="PackedScene" uid="uid://iaw1iia6k07s" path="res://Habitaciones/Zona_Sedou/altar_comercio.tscn" id="3_qeey7"]
+[ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
+[ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
+[ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
+[ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://MaquinaTragaperras.tscn" id="7_ca48y"]
+[ext_resource type="Texture2D" uid="uid://rleabbyw4trx" path="res://Habitaciones/Zona_Sedou/Imagenes/Carta_gambling.jpg" id="8_h65u6"]
+[ext_resource type="PackedScene" uid="uid://chy6mbnw54ffa" path="res://Habitaciones/Zona_Sedou/old_dresser_01.glb" id="9_t4237"]
+[ext_resource type="PackedScene" uid="uid://qaha63f6yfp1" path="res://Habitaciones/Zona_Sedou/small_wooden_table.glb" id="10_sb8h8"]
+[ext_resource type="PackedScene" uid="uid://cyw3d52gfiu0p" path="res://Habitaciones/Zona_Sedou/Objetosen3D/animal_rug_pack_free_version.glb" id="11_ubhvp"]
+[ext_resource type="PackedScene" uid="uid://60jp3bpu1g7k" path="res://Habitaciones/Zona_Sedou/Objetosen3D/old_wood_barrel.glb" id="12_i6vu3"]
+[ext_resource type="PackedScene" uid="uid://dgf4nyyofmmdm" path="res://Habitaciones/Zona_Sedou/Objetosen3D/antique_candle_holder.glb" id="13_ifart"]
+[ext_resource type="PackedScene" uid="uid://dgyh8al426qpo" path="res://Habitaciones/Zona_Sedou/Objetosen3D/vintage_sofa_185mb.glb" id="14_1cj0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]
+albedo_texture = ExtResource("8_h65u6")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sb8h8"]
+material = SubResource("StandardMaterial3D_t4237")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sb8h8"]
+size = Vector3(5.9439697, 9.542694, 2.019989)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yc5pa"]
+size = Vector3(0.76413345, 0.74017334, 0.54663086)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ubhvp"]
+height = 115.20334
+radius = 45.077637
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubhvp"]
+size = Vector3(20.101925, 7.2332153, 8.638412)
+
+[node name="Node3D" type="Node3D" unique_id=1910458292]
+
+[node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("1_w3udf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.33, 1.085)
+
+[node name="Muro_Troncos2" parent="." unique_id=737595272 instance=ExtResource("1_w3udf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.9, 0.33, -4.41)
+
+[node name="Muro_Troncos3" parent="." unique_id=1345142540 instance=ExtResource("1_w3udf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.405, 0.33, 1.1)
+
+[node name="Suelo_Madera" parent="." unique_id=1306016788 instance=ExtResource("2_qeey7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9964762, 0.0065364838, -0.97140086)
+
+[node name="AltarComercio" parent="." unique_id=1561528985 instance=ExtResource("3_qeey7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -4)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="AltarComercio" unique_id=79794215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, -0.685)
+operation = 2
+
+[node name="Puerta" parent="." unique_id=772702218 instance=ExtResource("4_4te1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5638545, 1.3188329, 2.5989141)
+
+[node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("5_lvvyy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.955, 0.33, 2.6)
+
+[node name="HUD" parent="." unique_id=304741105 instance=ExtResource("6_elxbx")]
+
+[node name="MaquinaTragaperras" parent="." unique_id=448147152 instance=ExtResource("7_ca48y")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -0.006655842, 1.5261574, -0.77660275)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1772741555]
+visible = false
+light_energy = 0.1
+
+[node name="CartelPremios" type="MeshInstance3D" parent="." unique_id=440043599]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -0.2648139, 1.653358, 0.5330676)
+mesh = SubResource("QuadMesh_sb8h8")
+
+[node name="armariogrande_sedou" parent="." unique_id=758483684 instance=ExtResource("9_t4237")]
+transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, -0.046987474, 0.11478041, -1.8242824)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="armariogrande_sedou" unique_id=675407254]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="armariogrande_sedou/StaticBody3D" unique_id=1978019541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23980713, 5.0732446, -0.035903916)
+shape = SubResource("BoxShape3D_sb8h8")
+
+[node name="armariopeque_sedou" parent="." unique_id=602746527 instance=ExtResource("10_sb8h8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.019557536, 0.11294472, -0.7340438)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="armariopeque_sedou" unique_id=258507981]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="armariopeque_sedou/StaticBody3D" unique_id=1198002687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9073486e-06, 0.43925375, -0.0064387023)
+shape = SubResource("BoxShape3D_yc5pa")
+
+[node name="alfombra_animal_sedou" parent="." unique_id=989827969 instance=ExtResource("11_ubhvp")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 2.5, 0.15, -1.084)
+
+[node name="Barril_sedou" parent="." unique_id=359055479 instance=ExtResource("12_i6vu3")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 5.680455, 0.20825362, 1.8878036)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barril_sedou" unique_id=255582759]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barril_sedou/StaticBody3D" unique_id=1607026808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4125366, 63.67785, 0)
+shape = SubResource("CylinderShape3D_ubhvp")
+
+[node name="vela_sedou" parent="." unique_id=97018272 instance=ExtResource("13_ifart")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.7102385, 1.182364, 1.9050918)
+
+[node name="sofa_sedou" parent="." unique_id=129791098 instance=ExtResource("14_1cj0m")]
+transform = Transform3D(1.7887322e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, 1.7887322e-09, 4.7980776, 0.20892298, -0.98240745)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="sofa_sedou" unique_id=60894000]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sofa_sedou/StaticBody3D" unique_id=507508614]
+transform = Transform3D(0.99999976, 0, -3.623768e-13, 0, 0.99999976, 0, 3.623768e-13, 0, 0.99999976, 0.021140575, 3.4067883, -3.2680378)
+shape = SubResource("BoxShape3D_ubhvp")
