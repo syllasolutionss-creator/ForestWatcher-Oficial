@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
 [ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
-[ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://Habitaciones/Zona_Sedou/MaquinaTragaperras.tscn" id="7_ca48y"]
+[ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://MaquinaTragaperras.tscn" id="7_ca48y"]
 [ext_resource type="Texture2D" uid="uid://rleabbyw4trx" path="res://Habitaciones/Zona_Sedou/Imagenes/Carta_gambling.jpg" id="8_h65u6"]
 [ext_resource type="PackedScene" uid="uid://chy6mbnw54ffa" path="res://Habitaciones/Zona_Sedou/old_dresser_01.glb" id="9_t4237"]
 [ext_resource type="PackedScene" uid="uid://qaha63f6yfp1" path="res://Habitaciones/Zona_Sedou/small_wooden_table.glb" id="10_sb8h8"]
