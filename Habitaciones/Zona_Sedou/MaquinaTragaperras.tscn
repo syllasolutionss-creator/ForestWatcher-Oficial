@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://btq46ge41h"]
+[gd_scene format=3 uid="uid://cxqubg7exkhi2"]
 
 [ext_resource type="Script" uid="uid://cfquxv4xy437w" path="res://Habitaciones/Zona_Sedou/maquina_tragaperras.gd" id="1_npi81"]
 [ext_resource type="PackedScene" uid="uid://bx5f6xf3y5h7x" path="res://Habitaciones/Zona_Sedou/maquina_gambling_sedou.glb" id="2_g1qwb"]
