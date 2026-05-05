@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="1_uosmu"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="2_spgyc"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="3_3qvko"]
-[ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_ppwe3"]
 [ext_resource type="PackedScene" uid="uid://c3aw50wlnvhri" path="res://Habitaciones/Zona_Artiitz/old_car_-_vaz_2107.glb" id="5_iksj0"]
 [ext_resource type="PackedScene" uid="uid://bhb2n7jiqpnn4" path="res://Habitaciones/Zona_Artiitz/old_wooden_storage_shelf (1).glb" id="6_wjuot"]
 [ext_resource type="PackedScene" uid="uid://c6dovp8cixhwx" path="res://Habitaciones/Zona_Artiitz/garage_door.glb" id="8_7v66d"]
@@ -89,9 +88,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.661316, 0, 0.41115928)
 
 [node name="Suelo_Madera2" parent="." unique_id=1486323878 instance=ExtResource("3_3qvko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6310954, 0, 0.41115928)
-
-[node name="Puerta" parent="." unique_id=1328967009 instance=ExtResource("4_ppwe3")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1750953, 1.1603527, -1.3729935)
 
 [node name="Coche" parent="." unique_id=1235558620 instance=ExtResource("5_iksj0")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.5612995, 0.10644388, 1.1210134)
