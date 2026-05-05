@@ -71,6 +71,24 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.90
 [node name="Muro_Troncos5" parent="." unique_id=1626872287 instance=ExtResource("2_spgyc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.875235, 0.10241532, -3.1582198)
 
+[node name="Techo1" parent="." unique_id=75992302 instance=ExtResource("2_spgyc")]
+transform = Transform3D(-2.5071824e-08, -3.5806274e-08, 1, -0.81915206, 0.57357645, 0, -0.57357645, -0.81915206, -4.371139e-08, 5.982341, 2.404164, 4.5067377)
+
+[node name="Techo2" parent="." unique_id=779755670 instance=ExtResource("2_spgyc")]
+transform = Transform3D(-2.5071824e-08, -3.5806274e-08, 1, -0.81915206, 0.57357645, 0, -0.57357645, -0.81915206, -4.371139e-08, 1.9444637, 2.404164, 4.5024605)
+
+[node name="Techo3" parent="." unique_id=647858798 instance=ExtResource("2_spgyc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0.8195423, 0.5730187, 3.582333e-08, -0.5730187, 0.8195423, -2.5047445e-08, 1.9444637, 2.404164, -4.1078224)
+
+[node name="Techo4" parent="." unique_id=1981821186 instance=ExtResource("2_spgyc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0.8195423, 0.5730187, 3.582333e-08, -0.5730187, 0.8195423, -2.5047445e-08, 5.982341, 2.404164, -4.1078224)
+
+[node name="Techo5" parent="." unique_id=54358320 instance=ExtResource("2_spgyc")]
+transform = Transform3D(3.8144873e-10, 4.3709722e-08, 1, 0.9999619, -0.00872653, 0, 0.00872653, 0.9999619, -4.371139e-08, 1.944, 4.176, -1.306)
+
+[node name="Techo6" parent="." unique_id=899106041 instance=ExtResource("2_spgyc")]
+transform = Transform3D(3.8144873e-10, 4.3709722e-08, 1, 0.9999619, -0.00872653, 0, 0.00872653, 0.9999619, -4.371139e-08, 5.982341, 4.176487, -1.3060243)
+
 [node name="Muro_Troncos4" parent="." unique_id=1604360935 instance=ExtResource("2_spgyc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9050212, 0.10241532, 3.5388994)
 
@@ -80,8 +98,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.95
 [node name="Muro_Troncos2" parent="." unique_id=607933329 instance=ExtResource("2_spgyc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.348295, 0.09759879, 2.2038012)
 
+[node name="Muro_Troncos12" parent="." unique_id=177179846 instance=ExtResource("2_spgyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.348295, 3.4147866, 2.2038012)
+
 [node name="Muro_Troncos3" parent="." unique_id=1612159608 instance=ExtResource("2_spgyc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.328391, 0.09759879, 2.2038012)
+
+[node name="Muro_Troncos11" parent="." unique_id=1856529367 instance=ExtResource("2_spgyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.328391, 3.2800448, 2.2038012)
 
 [node name="Suelo_Madera" parent="." unique_id=714591706 instance=ExtResource("3_3qvko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.661316, 0, 0.41115928)
