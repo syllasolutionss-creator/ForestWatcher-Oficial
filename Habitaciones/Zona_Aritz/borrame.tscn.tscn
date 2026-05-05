@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bxqkdbvm84j7w"]
+
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="1_dru18"]
+[ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="2_xdt7b"]
+[ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="3_eawi3"]
+[ext_resource type="PackedScene" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_owtjj"]
+[ext_resource type="PackedScene" uid="uid://c3aw50wlnvhri" path="res://Habitaciones/Zona_Aritz/old_car_-_vaz_2107.glb" id="5_w8tjd"]
+[ext_resource type="PackedScene" uid="uid://bhb2n7jiqpnn4" path="res://Habitaciones/Zona_Aritz/old_wooden_storage_shelf (1).glb" id="6_w4qbc"]
+[ext_resource type="PackedScene" uid="uid://dmve34syctl8x" path="res://Habitaciones/Zona_Aritz/old_work_bench.glb" id="7_0wxc0"]
+[ext_resource type="PackedScene" uid="uid://c6dovp8cixhwx" path="res://Habitaciones/Zona_Aritz/garage_door.glb" id="8_pdygt"]
+[ext_resource type="PackedScene" uid="uid://byv51hg724adn" path="res://Habitaciones/Zona_Aritz/gasoline_can.glb" id="9_w7uyu"]
+[ext_resource type="PackedScene" uid="uid://docqywthsqrwc" path="res://Habitaciones/Zona_Aritz/low_poly_rusty_metal_drum.glb" id="10_twusy"]
+
+
+
+[node name="Node3D" type="Node3D" unique_id=1017494380]
+
+[node name="Player" parent="." unique_id=576785281 instance=ExtResource("1_dru18")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.641567, 0.38924086, 0.19647121)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1526630934]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1867039992]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1916892275]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1747923025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8874483, 2.722199, -1.7903374)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1615134522]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2007013949]
+
+[node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("2_xdt7b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9050212, 0.10241532, -3.1582198)
+
+[node name="Muro_Troncos5" parent="." unique_id=1626872287 instance=ExtResource("2_xdt7b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.875235, 0.10241532, -3.1582198)
+
+[node name="Muro_Troncos4" parent="." unique_id=1604360935 instance=ExtResource("2_xdt7b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9050212, 0.10241532, 3.5388994)
+
+[node name="Muro_Troncos6" parent="." unique_id=1754472012 instance=ExtResource("2_xdt7b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.954456, 0.10241532, 3.5388994)
+
+[node name="Muro_Troncos2" parent="." unique_id=607933329 instance=ExtResource("2_xdt7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.348295, 0.09759879, 2.2038012)
+
+[node name="Muro_Troncos3" parent="." unique_id=1612159608 instance=ExtResource("2_xdt7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.328391, 0.09759879, 2.2038012)
+
+[node name="Suelo_Madera" parent="." unique_id=714591706 instance=ExtResource("3_eawi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.661316, 0, 0.41115928)
+
+[node name="Suelo_Madera2" parent="." unique_id=1486323878 instance=ExtResource("3_eawi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6310954, 0, 0.41115928)
+
+[node name="Puerta" parent="Suelo_Madera2" unique_id=1328967009 instance=ExtResource("4_owtjj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.4560001, 1.1603527, -1.7841527)
+
+[node name="Coche" parent="." unique_id=1235558620 instance=ExtResource("5_w8tjd")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.5612995, 0.10644388, 0.9098966)
+
+[node name="Estanteria1" parent="." unique_id=1565651805 instance=ExtResource("6_w4qbc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7419636, 0.099999905, 2.2645059)
+
+[node name="Estanteria2" parent="." unique_id=436587592 instance=ExtResource("6_w4qbc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.7419636, 0.099999905, 0.26093388)
+
+[node name="Estanteria3" parent="." unique_id=93780534 instance=ExtResource("6_w4qbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3094735, 0.099999905, -2.6043463)
+
+[node name="Estanteria4" parent="." unique_id=1001604902 instance=ExtResource("6_w4qbc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.7842116, 0.099999905, -1.8399122)
+
+[node name="Mesa Trabajo" parent="." unique_id=1586942633 instance=ExtResource("7_0wxc0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.839602, 0.099999905, -2.5358834)
+
+[node name="Puerta Garaje" parent="." unique_id=617436738 instance=ExtResource("8_pdygt")]
+transform = Transform3D(1.4, 0, 0, 0, 0.6, 0, 0, 0, 0.7, 0.612551, 1.2792583, 3.3537307)
+
+[node name="Gasolina1" parent="." unique_id=1547122870 instance=ExtResource("9_w7uyu")]
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 6.7630634, 0.11190212, -2.492907)
+
+[node name="Gasolina2" parent="." unique_id=1921888987 instance=ExtResource("9_w7uyu")]
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 6.769799, 0.11190212, -1.8886337)
+
+[node name="Gasolina3" parent="." unique_id=337541889 instance=ExtResource("9_w7uyu")]
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 6.769799, 0.11190212, -1.277437)
+
+[node name="Bidon1" parent="." unique_id=1178825684 instance=ExtResource("10_twusy")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 6.68197, 0.09295577, 2.8398957)
+
+[node name="Bidon2" parent="." unique_id=478315833 instance=ExtResource("10_twusy")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 5.688991, 0.09295577, 2.8398957)
+
+[node name="Bidon3" parent="." unique_id=736495151 instance=ExtResource("10_twusy")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 6.594005, 0.09295577, 1.7694674)
+
+[node name="Bidon4" parent="." unique_id=1022309745 instance=ExtResource("10_twusy")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 6.3448725, 1.3457012, 2.448501)
