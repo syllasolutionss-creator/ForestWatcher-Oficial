@@ -43,7 +43,7 @@ margin = 8.055
 size = Vector3(3.6663818, 2.4570313, 1.3319397)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3qvko"]
-size = Vector3(1.1812134, 2.4440918, 2.5479126)
+size = Vector3(1.1812134, 2.4440918, 2.8890686)
 
 [node name="Node3D" type="Node3D" unique_id=1017494380]
 
@@ -193,7 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03069973, 1.1877258, -1.38
 shape = SubResource("BoxShape3D_spgyc")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Sketchfab_Scene2/StaticBody3D" unique_id=2109305445]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2884693, 1.177619, 0.51327515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2884692, 1.1776189, 0.6838527)
 shape = SubResource("BoxShape3D_3qvko")
 
 [node name="Calendario" parent="." unique_id=64550843 instance=ExtResource("12_3qvko")]
