@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://1xwp7qylticc"]
+
+[ext_resource type="Script" uid="uid://sooi3j78u1" path="res://Habitaciones/Zona_Joan/static_body_3d.gd" id="1_delr1"]
+[ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="4_wfw6k"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://jugador_importado/player.tscn" id="5_2bgu0"]
+[ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="5_o6dm0"]
+[ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="5_wfw6k"]
+[ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="6_o6dm0"]
+
+[sub_resource type="Environment" id="Environment_80t2x"]
+background_mode = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6dm0"]
+albedo_color = Color(0.30980393, 0.4745098, 0.25882354, 1)
+
+[node name="Cocina_tscn" type="Node3D" unique_id=1562478256]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1659229910]
+environment = SubResource("Environment_80t2x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=805563114]
+script = ExtResource("1_delr1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=451017279]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=528758881]
+
+[node name="Marker3D" type="Marker3D" parent="StaticBody3D" unique_id=581451486]
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D" unique_id=367280814]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D" unique_id=1519527932]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticBody3D" unique_id=1415394034]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=373282207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112502895, 2.4330778, 1.0560539)
+light_energy = 0.7
+omni_range = 31.454
+
+[node name="Suelo_Bosque" type="CSGBox3D" parent="." unique_id=1582153301]
+transform = Transform3D(0.99974614, 0, 0.022530293, 0, 1, 0, -0.022530293, 0, 0.99974614, 0.019040108, -0.56001174, -5.682956)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_o6dm0")
+
+[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1948862303]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, 0.80228007, 0.19931889, -5.158773)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree5" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=412606403]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -1.0927757, 0.19931889, -6.858864)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree6" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1307001897]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, 2.6182537, 0.19931889, -4.468873)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=2120384198]
+transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 3.7008002, 0.19931889, -7.9878125)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree8" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=864893239]
+transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 2.085637, 0.19931889, -7.401496)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree9" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1133151665]
+transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 4.9909806, 0.19931889, -4.906186)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree10" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1245094098]
+transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 4.459513, 0.19931889, -2.9719481)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree11" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1623058173]
+transform = Transform3D(1.0000006, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000006, 6.7932596, 0.19931889, -4.086043)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree12" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1719291433]
+transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 5.7575836, 0.19931889, -6.3811584)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree13" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1193203773]
+transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, 4.1444054, 0.19931889, -0.9261478)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree14" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1745004735]
+transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, -1.0737773, 0.19931889, -4.20872)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree15" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1142719521]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -3.3801217, 0.19931889, -5.66705)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree16" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1164237530]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -5.712908, 0.19931889, -1.6966007)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree17" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1349979789]
+transform = Transform3D(1.0000006, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000006, -4.7827997, 0.19931889, -3.6047633)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree18" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1046547888]
+transform = Transform3D(1.0000006, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000006, -0.07216046, 0.19931889, -8.540314)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree19" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=454685843]
+transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, -7.6731462, 0.19931889, -3.5152724)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree20" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=615396714]
+transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, -3.1342402, 0.19931889, -9.113794)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree21" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=424124645]
+transform = Transform3D(1.0000002, 0, 1.8626451e-09, 0, 1, 0, -1.8626451e-09, 0, 1.0000002, -7.171557, 0.19931889, -6.6218815)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree22" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=892448670]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -5.953659, 0.19931889, -9.558481)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree23" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1006912056]
+transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 4.3436527, 0.19931889, -10.282816)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree24" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1882073358]
+transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, 1.6030962, 0.19931889, -10.881318)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree25" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=677346171]
+transform = Transform3D(1.0000008, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1.0000008, -1.504645, 0.19931889, -11.117692)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree26" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=2078989394]
+transform = Transform3D(1.0000006, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000006, 0.11716474, 0.19931889, -13.290914)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree27" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=830633703]
+transform = Transform3D(1.0000006, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000006, -8.42551, 0.19931889, -11.023308)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree28" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=286848966]
+transform = Transform3D(1.0000008, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1.0000008, -10.506496, 0.19931889, -6.7371354)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree29" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=864375778]
+transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 7.386689, 0.19931889, -2.3425255)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree30" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=2039340253]
+transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 6.796476, 0.19931889, -0.83344007)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree31" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1507213395]
+transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, 9.032286, 0.19931889, -4.276298)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree32" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=739055849]
+transform = Transform3D(1.0000017, 0, 1.6763806e-08, 0, 1, 0, -1.6763806e-08, 0, 1.0000017, 9.397268, 0.19931889, -1.2679558)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree33" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=729488427]
+transform = Transform3D(1.0000019, 0, 1.8626451e-08, 0, 1, 0, -1.8626451e-08, 0, 1.0000019, 7.5596466, 0.19931889, -7.069007)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree34" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=705324571]
+transform = Transform3D(1.000002, 0, 2.0489097e-08, 0, 1, 0, -2.0489097e-08, 0, 1.000002, 9.696776, 0.19931889, -7.2630725)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree35" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=93064440]
+transform = Transform3D(1.0000023, 0, 2.4214387e-08, 0, 1, 0, -2.4214387e-08, 0, 1.0000023, 6.959068, 0.19931889, -9.515735)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree36" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1629741260]
+transform = Transform3D(1.0000026, 0, 2.6077032e-08, 0, 1, 0, -2.6077032e-08, 0, 1.0000026, 9.027714, 0.19931889, -9.989063)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree37" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1399895527]
+transform = Transform3D(1.0000029, 0, 2.7939677e-08, 0, 1, 0, -2.7939677e-08, 0, 1.0000029, 3.5782528, 0.19931889, -12.630348)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree38" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=525585567]
+transform = Transform3D(1.000003, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000003, 6.208296, 0.19931889, -12.571079)
+mesh = ExtResource("5_wfw6k")
+
+[node name="PineTree39" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1994292905]
+transform = Transform3D(1.0000031, 0, 3.1664968e-08, 0, 1, 0, -3.1664968e-08, 0, 1.0000031, 8.445264, 0.19931889, -12.520669)
+mesh = ExtResource("5_wfw6k")
+
+[node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("4_wfw6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3778334, 0.6213013, 2.6293154)
+
+[node name="Suelo_Madera" parent="." unique_id=714591706 instance=ExtResource("5_o6dm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9575541, 0.27962542, 0.56031764)
+
+[node name="Muro_Troncos2" parent="." unique_id=111623291 instance=ExtResource("4_wfw6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5328908, 0.56983554, 2.4872022)
+
+[node name="Player" parent="." unique_id=576785281 instance=ExtResource("5_2bgu0")]
+
+[node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("6_o6dm0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.2479635, 0.5850477, -2.732217)
+
+[node name="Muro_Troncos3" parent="." unique_id=625459009 instance=ExtResource("4_wfw6k")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.99880517, 0.5796254, 4.061351)
