@@ -238,7 +238,7 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.00026415288, 0.000
 shape = SubResource("BoxShape3D_70bho")
 
 [node name="Mueble Cocina" parent="." unique_id=621012547 instance=ExtResource("7_70bho")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -1.35762, 0.2688086, -2.8831093)
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -1.35762, 0.2688086, -2.7143536)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mueble Cocina" unique_id=544115992]
 
