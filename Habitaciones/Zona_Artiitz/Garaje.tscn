@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://docqywthsqrwc" path="res://Habitaciones/Zona_Artiitz/low_poly_rusty_metal_drum.glb" id="10_w1o0b"]
 [ext_resource type="PackedScene" uid="uid://ygk2kcnqefid" path="res://Habitaciones/garage_desk.glb" id="11_3qvko"]
 [ext_resource type="PackedScene" uid="uid://ds17wc02vvm0h" path="res://Habitaciones/shrek.glb" id="11_spgyc"]
+[ext_resource type="PackedScene" uid="uid://cu3ejr73mmqy6" path="res://Habitaciones/calendar_of_george_a._romeros_day_of_the_dead.glb" id="12_3qvko"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bar6b"]
 size = Vector3(179.41122, 166.1211, 420.30487)
@@ -167,9 +168,6 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 6.594005, 0.09295577
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.512675, 0)
 shape = SubResource("CapsuleShape3D_3qvko")
 
-[node name="Bidon3" parent="Bidon3" unique_id=1922138302 instance=ExtResource("10_w1o0b")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 6.594005, 0.09295577, 1.7694674)
-
 [node name="Bidon4" parent="." unique_id=1022309745 instance=ExtResource("10_w1o0b")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 6.3448725, 1.3457012, 2.448501)
 
@@ -197,3 +195,6 @@ shape = SubResource("BoxShape3D_spgyc")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Sketchfab_Scene2/StaticBody3D" unique_id=2109305445]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2884693, 1.177619, 0.51327515)
 shape = SubResource("BoxShape3D_3qvko")
+
+[node name="Calendario" parent="." unique_id=64550843 instance=ExtResource("12_3qvko")]
+transform = Transform3D(0.09063078, 0, -0.042261828, 0, 0.1, 0, 0.042261828, 0, 0.09063078, -1.056542, 1.4347446, -2.9397829)
