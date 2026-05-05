@@ -1,29 +1,20 @@
 extends Node3D
 
-var abierta = false
-var tween : Tween
+@onready var anim = $AnimationPlayer
+var esta_abierta = false
 
+# Esto es lo que el jugador llama al pulsar E
 func interactuar():
-	print("¡La puerta ha recibido la orden de abrirse!") # <-- CHIVATO 3
-	
-	if tween and tween.is_running():
-		return
-	# ... resto de tu código ...
-	
-	# Creamos la animación suave
-	tween = create_tween()
-	abierta = !abierta
-	
-	# Giramos sobre el eje Y
-	if abierta:
-		# Girar 90 grados hacia un lado
-		tween.tween_property(self, "rotation_degrees:y", -90.0, 0.5)
+	if esta_abierta:
+		anim.play("cerrar")
+		esta_abierta = false
 	else:
-		# Volver a la posición inicial (0 grados)
-		tween.tween_property(self, "rotation_degrees:y", 0.0, 0.5)
+		anim.play("abrir")
+		esta_abierta = true
 
+# Esto es lo que hace que salga el texto "Abrir" / "Cerrar"
 func obtener_texto_interaccion() -> String:
-	if abierta:
-		return "[E] - Cerrar"
+	if esta_abierta:
+		return "Presiona E para cerrar"
 	else:
-		return "[E] - Abrir"
+		return "Presiona E para abrir"

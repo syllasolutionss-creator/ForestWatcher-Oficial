@@ -13,6 +13,7 @@ size = Vector3(2.187561, 2.0408936, 2.1251822)
 
 [sub_resource type="Animation" id="Animation_bjnlr"]
 resource_name = "Parpadeo"
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -21,7 +22,7 @@ tracks/0/path = NodePath("OmniLight3D:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.9666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 2.0]
@@ -33,7 +34,7 @@ tracks/1/path = NodePath("OmniLight3D2:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.9666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 2.0]
@@ -79,7 +80,7 @@ detector = NodePath("Detector")
 spawn_point = NodePath("SpawnPoint")
 items_posibles = Array[PackedScene]([ExtResource("3_vtok6"), ExtResource("3_bjnlr")])
 
-[node name="Meshy_AI_Thatched_Log_Hut_0427211507_texture" parent="." unique_id=189372158 instance=ExtResource("4_bjnlr")]
+[node name="Meshy_AI_Thatched_Log_Hut_0427211507_texture" parent="." unique_id=1309814240 instance=ExtResource("4_bjnlr")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2011619612]

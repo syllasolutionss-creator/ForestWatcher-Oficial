@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtoagt2s15n0n"
+uid="uid://cng15uq285nr4"
 path.s3tc="res://.godot/imported/vintage_sofa_185mb_3.png-83fe631d050f414619e595054d1dffcd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "7379915c3f143423379c4c154248dbb5"
 }
 
 [deps]

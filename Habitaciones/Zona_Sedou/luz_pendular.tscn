@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnnhivvph6lkb" path="res://Habitaciones/Zona_Sedou/pivot_luz.gd" id="1_h3280"]
 
+
 [node name="LuzPendular" type="Node3D" unique_id=128902994]
 
 [node name="PivotLuz" type="Node3D" parent="." unique_id=1423138946]

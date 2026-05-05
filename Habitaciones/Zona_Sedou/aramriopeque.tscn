@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pokhb4dr1qi7"]
+
+[ext_resource type="PackedScene" uid="uid://qaha63f6yfp1" path="res://Habitaciones/Zona_Sedou/small_wooden_table.glb" id="1_ieixi"]
+
+[node name="Sketchfab_Scene" unique_id=271470884 instance=ExtResource("1_ieixi")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)

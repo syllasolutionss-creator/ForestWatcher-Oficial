@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://byv51hg724adn" path="res://Habitaciones/Zona_Artiitz/gasoline_can.glb" id="9_w7uyu"]
 [ext_resource type="PackedScene" uid="uid://docqywthsqrwc" path="res://Habitaciones/Zona_Artiitz/low_poly_rusty_metal_drum.glb" id="10_twusy"]
 
+
 [node name="Node3D" type="Node3D" unique_id=1017494380]
 
 [node name="Player" parent="." unique_id=576785281 instance=ExtResource("1_dru18")]

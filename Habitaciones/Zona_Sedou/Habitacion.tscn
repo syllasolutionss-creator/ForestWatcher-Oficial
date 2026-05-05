@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
 [ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
-[ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://MaquinaTragaperras.tscn" id="7_ca48y"]
 [ext_resource type="Texture2D" uid="uid://rleabbyw4trx" path="res://Habitaciones/Zona_Sedou/Imagenes/Carta_gambling.jpg" id="8_h65u6"]
 [ext_resource type="PackedScene" uid="uid://chy6mbnw54ffa" path="res://Habitaciones/Zona_Sedou/old_dresser_01.glb" id="9_t4237"]
 [ext_resource type="PackedScene" uid="uid://qaha63f6yfp1" path="res://Habitaciones/Zona_Sedou/small_wooden_table.glb" id="10_sb8h8"]
@@ -23,73 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://beplbrnh057o1" path="res://Habitaciones/Zona_Sedou/Objetosen3D/desk.glb" id="21_3w5m7"]
 [ext_resource type="PackedScene" uid="uid://dgdgjltejtdvh" path="res://Habitaciones/Zona_Sedou/Objetosen3D/new_york_city_police_investigation_board.glb" id="22_j5ygm"]
 [ext_resource type="PackedScene" uid="uid://tujpj6sjwx38" path="res://Habitaciones/Zona_Sedou/Objetosen3D/industrial_wall_light.glb" id="23_j5ygm"]
-
-[sub_resource type="GDScript" id="GDScript_vmy2o"]
-script/source = "extends StaticBody3D
-
-@onready var anim = $AnimationPlayer
-@onready var rodillos = [$Rodillo1, $Rodillo2, $Rodillo3]
-
-const ANCHO_SIMBOLO = 874
-const ALTO_SIMBOLO = 688 
-var esta_ocupado = false
-
-func interactuar():
-	# 1. Comprobaciones de seguridad
-	if esta_ocupado: 
-		print(\"La máquina está ocupada\")
-		return 
-	
-	if Global.monedas < 10:
-		print(\"No tienes suficiente dinero\")
-		return
-
-	# 2. Bloqueamos
-	esta_ocupado = true
-	Global.modificar_dinero(-10)
-	
-	# 3. Animación de palanca
-	anim.play(\"tirar_palanca\")
-	
-	# 4. Gira los rodillos y ESPERA a que terminen (await es vital aquí)
-	var resultados = await girar_rodillos()
-	
-	# 5. Comprueba si ganaste
-	verificar_premios(resultados)
-	
-	# 6. Desbloqueamos (IMPORTANTE: Esto permite volver a jugar)
-	esta_ocupado = false 
-
-func girar_rodillos():
-	var resultados_finales = []
-	var altura_total = 2752 
-	
-	for i in range(rodillos.size()):
-		var rodillo = rodillos[i]
-		# Reseteamos posición antes de girar para evitar acumulación
-		rodillo.region_rect.position.y = 0 
-		
-		var resultado = randi() % 4
-		resultados_finales.append(resultado)
-		
-		var destino_y = resultado * ALTO_SIMBOLO
-		var distancia_total = (3 * altura_total) + destino_y
-		
-		var tween = create_tween()
-		var tiempo_giro = 1.5 + (i * 0.4) 
-		
-		tween.tween_property(rodillo, \"region_rect:position:y\", float(distancia_total), tiempo_giro).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
-	
-	await get_tree().create_timer(3.0).timeout
-	return resultados_finales
-
-func verificar_premios(resultados):
-	if resultados[0] == resultados[1] and resultados[1] == resultados[2]:
-		print(\"¡PREMIO!\")
-		Global.modificar_dinero(50)
-	else:
-		print(\"Has perdido.\")
-"
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="23_skxdf"]
+[ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://Habitaciones/Zona_Sedou/Assets_Importados/MaquinaTragaperras.tscn" id="24_skxdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]
 albedo_texture = ExtResource("8_h65u6")
@@ -145,17 +79,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9964762, 0.0065364838, -0.9
 [node name="AltarComercio" parent="." unique_id=1561528985 instance=ExtResource("3_qeey7")]
 transform = Transform3D(-3.934025e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.934025e-08, 5.501654, 1.4677132, -3.0930471)
 
-[node name="Puerta" parent="." unique_id=772702218 instance=ExtResource("4_4te1y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5638545, 1.3188329, 2.4876204)
+[node name="Puerta" parent="." unique_id=1328967009 instance=ExtResource("4_4te1y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5677915, 1.3028654, 2.6523411)
 
 [node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("5_lvvyy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.955, 0.33, 2.6)
 
 [node name="HUD" parent="." unique_id=304741105 instance=ExtResource("6_elxbx")]
-
-[node name="MaquinaTragaperras" parent="." unique_id=448147152 instance=ExtResource("7_ca48y")]
-transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -0.007, 1.526, -0.6396213)
-script = SubResource("GDScript_vmy2o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1772741555]
 visible = false
@@ -165,7 +95,7 @@ light_energy = 0.1
 transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -0.26365328, 1.8650916, 0.31603998)
 mesh = SubResource("QuadMesh_sb8h8")
 
-[node name="armariogrande_sedou" parent="." unique_id=758483684 instance=ExtResource("9_t4237")]
+[node name="armariogrande_sedou" parent="." unique_id=1483510823 instance=ExtResource("9_t4237")]
 transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, -0.046987474, 0.11478041, -1.6529771)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="armariogrande_sedou" unique_id=675407254]
@@ -174,8 +104,8 @@ transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23980713, 5.0732446, -0.035903916)
 shape = SubResource("BoxShape3D_sb8h8")
 
-[node name="armariopeque_sedou" parent="." unique_id=602746527 instance=ExtResource("10_sb8h8")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.019557536, 0.11294472, -0.589137)
+[node name="armariopeque_sedou" parent="." unique_id=1544737598 instance=ExtResource("10_sb8h8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.019557536, 0.10689229, -0.589137)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="armariopeque_sedou" unique_id=258507981]
 
@@ -183,7 +113,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9073486e-06, 0.43925375, -0.0064387023)
 shape = SubResource("BoxShape3D_yc5pa")
 
-[node name="alfombra_animal_sedou" parent="." unique_id=989827969 instance=ExtResource("11_ubhvp")]
+[node name="alfombra_animal_sedou" parent="." unique_id=223536164 instance=ExtResource("11_ubhvp")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 2.7778082, 0.15, -0.96312517)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="alfombra_animal_sedou" unique_id=2133229294]
@@ -192,7 +122,7 @@ transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 2.7778082, 0.15, -0.963
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013915658, 0.020770133, 0.22202088)
 shape = SubResource("BoxShape3D_ifart")
 
-[node name="Barril_sedou" parent="." unique_id=359055479 instance=ExtResource("12_i6vu3")]
+[node name="Barril_sedou" parent="." unique_id=623459639 instance=ExtResource("12_i6vu3")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 5.680455, 0.20825362, 1.8878036)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Barril_sedou" unique_id=255582759]
@@ -201,10 +131,10 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 5.680455, 0.20825362
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4125366, 63.67785, 0)
 shape = SubResource("CylinderShape3D_ubhvp")
 
-[node name="vela_sedou" parent="." unique_id=97018272 instance=ExtResource("13_ifart")]
+[node name="vela_sedou" parent="." unique_id=1697703787 instance=ExtResource("13_ifart")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.7102385, 1.182364, 1.9050918)
 
-[node name="sofa_sedou" parent="." unique_id=129791098 instance=ExtResource("14_1cj0m")]
+[node name="sofa_sedou" parent="." unique_id=777000566 instance=ExtResource("14_1cj0m")]
 transform = Transform3D(1.7887322e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, 1.7887322e-09, 4.7980776, 0.20892298, -0.58215463)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="sofa_sedou" unique_id=60894000]
@@ -213,7 +143,7 @@ transform = Transform3D(1.7887322e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, 1.7887322e
 transform = Transform3D(0.99999976, 0, -3.623768e-13, 0, 0.99999976, 0, 3.623768e-13, 0, 0.99999976, 0.021140575, 3.4067883, -3.2680378)
 shape = SubResource("BoxShape3D_ubhvp")
 
-[node name="mesa_antigua_sedou" parent="." unique_id=1967067535 instance=ExtResource("15_i6vu3")]
+[node name="mesa_antigua_sedou" parent="." unique_id=275644947 instance=ExtResource("15_i6vu3")]
 transform = Transform3D(-0.005, 0, -7.5497897e-10, 0, 0.005, 0, 7.5497897e-10, 0, -0.005, 0.15057647, 0.115, 1.0584811)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mesa_antigua_sedou" unique_id=200016850]
@@ -222,13 +152,13 @@ transform = Transform3D(-0.005, 0, -7.5497897e-10, 0, 0.005, 0, 7.5497897e-10, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.311514, 146.39262, 1.8429718)
 shape = SubResource("BoxShape3D_1cj0m")
 
-[node name="tv_sedou" parent="." unique_id=471260346 instance=ExtResource("16_ifart")]
+[node name="tv_sedou" parent="." unique_id=1639016328 instance=ExtResource("16_ifart")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.14761582, 1.2255005, 1.6907549)
 
-[node name="Sketchfab_Scene" parent="." unique_id=1939905999 instance=ExtResource("17_vmy2o")]
-transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 5.926, 2.4861684, -0.9861254)
+[node name="Sketchfab_Scene" parent="." unique_id=890510959 instance=ExtResource("17_vmy2o")]
+transform = Transform3D(5.9624403e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.9624403e-09, 5.926, 2.4861684, -0.6010503)
 
-[node name="Sketchfab_Scene2" parent="." unique_id=1001319448 instance=ExtResource("18_pddw6")]
+[node name="Sketchfab_Scene2" parent="." unique_id=449237983 instance=ExtResource("18_pddw6")]
 transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, 0.68581235, 0.19892132, 0.75567985)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene2" unique_id=388084251]
@@ -237,7 +167,7 @@ transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1
 transform = Transform3D(0.99999976, 0, -2.842171e-14, 0, 0.99999976, 0, 2.842171e-14, 0, 0.99999976, -0.16870105, 0.6119566, 0.010589421)
 shape = SubResource("BoxShape3D_3w5m7")
 
-[node name="mini_mesa_1" parent="." unique_id=1326502477 instance=ExtResource("19_3w5m7")]
+[node name="mini_mesa_1" parent="." unique_id=1019112585 instance=ExtResource("19_3w5m7")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 0.07859743, 0.5768846, -2.8111572)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mini_mesa_1" unique_id=1954657206]
@@ -246,7 +176,7 @@ transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03046608, 0.113097906, -0.23388985)
 shape = SubResource("BoxShape3D_vmy2o")
 
-[node name="mini_mesa_2" parent="." unique_id=500352068 instance=ExtResource("19_3w5m7")]
+[node name="mini_mesa_2" parent="." unique_id=1054967298 instance=ExtResource("19_3w5m7")]
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 0.07859743, 0.5768846, -3.759999)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mini_mesa_2" unique_id=1940673108]
@@ -255,10 +185,10 @@ transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013977051, 0.05027771, -0.23254395)
 shape = SubResource("BoxShape3D_pddw6")
 
-[node name="estatua" parent="." unique_id=1458483197 instance=ExtResource("20_j5ygm")]
+[node name="estatua" parent="." unique_id=916127517 instance=ExtResource("20_j5ygm")]
 transform = Transform3D(-0.09749543, 0, 0.7940369, 0, 0.8, 0, -0.7940369, 0, -0.09749543, 0.005699992, 1.0354569, -2.6221974)
 
-[node name="mesa_policial" parent="." unique_id=1633623016 instance=ExtResource("21_3w5m7")]
+[node name="mesa_policial" parent="." unique_id=16834619 instance=ExtResource("21_3w5m7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2411865, 0.4718384, -4.113428)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mesa_policial" unique_id=227123801]
@@ -267,11 +197,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2411865, 0.4718384, -4.1134
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.078251, 0.1836701, 0.6269598)
 shape = SubResource("BoxShape3D_skxdf")
 
-[node name="poster_desaparecidos" parent="." unique_id=1702813308 instance=ExtResource("22_j5ygm")]
+[node name="poster_desaparecidos" parent="." unique_id=1044670682 instance=ExtResource("22_j5ygm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3349285, 1.2162731, -4.16817)
 
-[node name="luz_escritorio" parent="." unique_id=125037805 instance=ExtResource("23_j5ygm")]
+[node name="luz_escritorio" parent="." unique_id=1641645542 instance=ExtResource("23_j5ygm")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 2.3337128, 2.325106, -4.0049634)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="luz_escritorio" unique_id=619162605]
 omni_range = 1.2
+
+[node name="Player" parent="." unique_id=576785281 instance=ExtResource("23_skxdf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.103851, 2.8658962, -0.42037922)
+
+[node name="MaquinaTragaperras" parent="." unique_id=448147152 instance=ExtResource("24_skxdf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.018837944, 1.3186121, -0.6161213)
+
+[node name="maquina_gambling_sedou" parent="MaquinaTragaperras" index="0" unique_id=524177035]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.023096561, 0)
+
+[editable path="MaquinaTragaperras"]

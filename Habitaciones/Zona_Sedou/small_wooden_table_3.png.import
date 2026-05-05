@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcyawff1t7ko5"
+uid="uid://cukhv37coax0m"
 path.s3tc="res://.godot/imported/small_wooden_table_3.png-1f4476c03849329d20014e15871660a8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "e9368965ee9537755132f867b0372e28"
 }
 
 [deps]
