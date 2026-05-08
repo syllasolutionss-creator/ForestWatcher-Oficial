@@ -192,8 +192,9 @@ func _ready() -> void:
 	_configurar_timer_arthur()
 	_configurar_musica_fondo()
 	_crear_acechador()
+	_ejecutar_cinematica_segura()
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if is_instance_valid(panel_dialogo):
 		panel_dialogo.hide()
@@ -386,12 +387,16 @@ func _physics_process(delta: float) -> void:
 # _INPUT - TECLADO Y RATÓN
 # =====================================================================
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and estado_actual != ESTADO_INTERACTUANDO:
-		if is_instance_valid(jugador) and is_instance_valid(camara):
-			jugador.rotate_y(-event.relative.x * sensibilidad_mouse)
-			rotacion_x = clamp(rotacion_x - event.relative.y * sensibilidad_mouse, -1.2, 1.2)
-			camara.rotation.x = rotacion_x
 	
+	# --- ESTO ES LO QUE HACE QUE LA CÁMARA SE MUEVA Y PELEE CON EL JUGADOR ---
+	# Ponemos # delante de estas 4 líneas para desactivarlas
+	# if event is InputEventMouseMotion and estado_actual != ESTADO_INTERACTUANDO:
+	# 	if is_instance_valid(jugador) and is_instance_valid(camara):
+	# 		jugador.rotate_y(-event.relative.x * sensibilidad_mouse)
+	# 		rotacion_x = clamp(rotacion_x - event.relative.y * sensibilidad_mouse, -1.2, 1.2)
+	# 		camara.rotation.x = rotacion_x
+	
+	# --- ESTO DEBE QUEDAR SIN # PARA QUE EL JUEGO FUNCIONE ---
 	if event is InputEventKey and event.pressed and not event.echo:
 		if estado_actual == ESTADO_INTERACTUANDO and (event.keycode == KEY_Q or event.keycode == KEY_ESCAPE):
 			if inspeccionando_cartel:
@@ -1320,3 +1325,38 @@ func _ir_a_dormir():
 	estado_actual = ESTADO_EXPLORANDO
 	if is_instance_valid(hud_mirilla): hud_mirilla.show()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+func _ejecutar_cinematica_segura():
+	# 1. Bloqueamos al jugador
+	estado_actual = ESTADO_INTERACTUANDO
+	
+	# 2. Hacemos que la cámara de la película sea la principal
+	# Asegúrate de que el nombre sea IDÉNTICO al del árbol de nodos
+	if has_node("CamaraCinematica"):
+		$CamaraCinematica.make_current()
+	
+	# 3. Quitamos la mirilla (opcional)
+	if is_instance_valid(hud_mirilla): hud_mirilla.hide()
+	
+	# 4. Ponemos el fondo negro al principio
+	if is_instance_valid(ui_fundido_negro):
+		ui_fundido_negro.color.a = 1.0
+	
+	# 5. Play a la animación
+	if has_node("AnimationPlayer"):
+		$AnimationPlayer.play("cinematica_inicio")
+	
+	# 6. Efecto de "abrir los ojos": el negro desaparece en 2 segundos
+	var tween = create_tween()
+	if is_instance_valid(ui_fundido_negro):
+		tween.tween_property(ui_fundido_negro, "color:a", 0.0, 2.0)
+	
+	# 7. ESPERAMOS a que la animación termine
+	await $AnimationPlayer.animation_finished
+	
+	# 8. Volvemos a la cámara del jugador
+	if is_instance_valid(camara):
+		camara.make_current()
+	
+	# 9. Devolvemos el control
+	estado_actual = ESTADO_EXPLORANDO
+	if is_instance_valid(hud_mirilla): hud_mirilla.show()
