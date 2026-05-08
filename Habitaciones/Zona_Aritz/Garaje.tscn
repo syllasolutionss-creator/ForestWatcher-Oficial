@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ygk2kcnqefid" path="res://Habitaciones/garage_desk.glb" id="11_3qvko"]
 [ext_resource type="PackedScene" uid="uid://ds17wc02vvm0h" path="res://Habitaciones/shrek.glb" id="11_spgyc"]
 [ext_resource type="PackedScene" uid="uid://cu3ejr73mmqy6" path="res://Habitaciones/calendar_of_george_a._romeros_day_of_the_dead.glb" id="12_3qvko"]
+[ext_resource type="PackedScene" uid="uid://bf7laqgoupn2u" path="res://despensa_-_daniela_fungairino.glb" id="12_12oqq"]
+[ext_resource type="PackedScene" uid="uid://jnv4424prfh6" path="res://sexy_beach_bikini_asian_woman.glb" id="13_1nqff"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bar6b"]
 size = Vector3(179.41122, 166.1211, 420.30487)
@@ -218,3 +220,9 @@ shape = SubResource("BoxShape3D_3qvko")
 
 [node name="Calendario" parent="." unique_id=64550843 instance=ExtResource("12_3qvko")]
 transform = Transform3D(0.09063078, 0, -0.042261828, 0, 0.1, 0, 0.042261828, 0, 0.09063078, -1.056542, 1.4347446, -2.9397829)
+
+[node name="Despensa" parent="." unique_id=1040356745 instance=ExtResource("12_12oqq")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 2.294765, 0.90622234, -2.5240803)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=485552875 instance=ExtResource("13_1nqff")]
+transform = Transform3D(0.19999984, -0.00014820941, 0.00020829447, 0.0001488696, 0.19999894, -0.0006345352, -0.00020782312, 0.00063468976, 0.1999989, 4.801455, 1.5811408, -2.7009907)
