@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c8sdj5u3e60mn" path="res://Habitaciones/Zona_Jan/dirty_cardboard_box.glb" id="6_g325i"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="6_ioaa6"]
 [ext_resource type="PackedScene" uid="uid://ck70w0x6erbml" path="res://Habitaciones/Zona_Jan/shreks_toilet.glb" id="8_ioaa6"]
-[ext_resource type="PackedScene" uid="uid://m8dgcf4pfvs" path="res://Habitaciones/Zona_Sedou/floor_tile_material.glb" id="8_qo4fd"]
 [ext_resource type="PackedScene" uid="uid://oxfq3enr2qxk" path="res://Habitaciones/Zona_Jan/drawkill_puppet_.blend.glb" id="9_q7u2m"]
 [ext_resource type="AudioStream" uid="uid://egj6wch14htn" path="res://Habitaciones/Zona_Jan/five-nights-at-freddys-full-scream-sound_2.mp3" id="10_mpvr8"]
 [ext_resource type="PackedScene" uid="uid://bg5rsqj28xo72" path="res://Habitaciones/Zona_Jan/shower_room_-_assets.glb" id="10_qo4fd"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bp3irfo1c3c3" path="res://Habitaciones/Zona_Jan/hand.glb" id="14_ufop1"]
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="15_b0uw4"]
 [ext_resource type="PackedScene" uid="uid://dp0luntsidbye" path="res://Habitaciones/Zona_Jan/wall_lamp.glb" id="16_inoaq"]
+[ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="17_njuns"]
 
 [sub_resource type="Environment" id="Environment_6kk6x"]
 background_mode = 3
@@ -114,7 +114,7 @@ shape = SubResource("BoxShape3D_mpvr8")
 [node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("6_ioaa6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15510225, 0.024145722, 4.0905604)
 
-[node name="Sketchfab_Scene6" parent="." unique_id=1536798087 instance=ExtResource("8_qo4fd")]
+[node name="Sketchfab_Scene6" parent="." unique_id=1536798087]
 transform = Transform3D(3.457409, 0, 0, 0, 1, 0, 0, 0, 3.4445925, 0.26860738, -0.07885313, 5.7156367)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene6" unique_id=989455220]
@@ -335,3 +335,6 @@ mesh = ExtResource("15_b0uw4")
 
 [node name="Sketchfab_Scene17" parent="." unique_id=743372578 instance=ExtResource("16_inoaq")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 4.482033, 1.755766, 5.2653384)
+
+[node name="Suelo_Madera" parent="." unique_id=714591706 instance=ExtResource("17_njuns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.753879, -0.16068876, 2.1141715)
