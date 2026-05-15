@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w3udf"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="2_qeey7"]
 [ext_resource type="PackedScene" uid="uid://iaw1iia6k07s" path="res://Habitaciones/Zona_Sedou/altar_comercio.tscn" id="3_qeey7"]
-[ext_resource type="PackedScene" uid="uid://bfthprpogrh6h" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_4te1y"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="5_lvvyy"]
 [ext_resource type="PackedScene" uid="uid://bquiprh0yfjjx" path="res://Habitaciones/Zona_Sedou/hud.tscn" id="6_elxbx"]
 [ext_resource type="Texture2D" uid="uid://rleabbyw4trx" path="res://Habitaciones/Zona_Sedou/Imagenes/Carta_gambling.jpg" id="8_h65u6"]
@@ -78,9 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9964762, 0.0065364838, -0.9
 
 [node name="AltarComercio" parent="." unique_id=1561528985 instance=ExtResource("3_qeey7")]
 transform = Transform3D(-3.934025e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.934025e-08, 5.501654, 1.4677132, -3.0930471)
-
-[node name="Puerta" parent="." unique_id=1328967009 instance=ExtResource("4_4te1y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5677915, 1.3028654, 2.6523411)
 
 [node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("5_lvvyy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.955, 0.33, 2.6)
