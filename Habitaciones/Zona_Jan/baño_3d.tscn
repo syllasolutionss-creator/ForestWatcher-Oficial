@@ -56,6 +56,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.213608, 0, 4.0752172)
 [node name="Muro_Troncos3" parent="." unique_id=84853898 instance=ExtResource("1_w4nqo")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 1.762536, -0.012216687, 5.4558764)
 
+[node name="Muro_Troncos5" parent="." unique_id=295733535 instance=ExtResource("1_w4nqo")]
+transform = Transform3D(-4.3640316e-08, 0, -0.99999994, 0.9983573, 0.012858027, -4.371065e-08, 0.0057850275, -2.2189877, -2.5328337e-10, 1.762536, 2.9877834, 5.4558764)
+
 [node name="Muro_Troncos4" parent="." unique_id=1754655438 instance=ExtResource("1_w4nqo")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 1.762536, -0.012216687, -1.2534492)
 
