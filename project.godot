@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Frecuencia_Maldita_3D"
-run/main_scene="uid://gin1air5nyno"
+run/main_scene="uid://cu02lk6f1u8n3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

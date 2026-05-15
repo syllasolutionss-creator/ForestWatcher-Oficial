@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="18_i0g27"]
 [ext_resource type="PackedScene" uid="uid://bicmitu0u7cqc" path="res://Habitaciones/Zona_Sedou/Objetosen3D/old_simple_drawer.glb" id="19_ealrb"]
 [ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="20_jsnrv"]
+[ext_resource type="AudioStream" uid="uid://br1sk3yeuxqe" path="res://Audio/Voces/audio_defini_animacion1.wav" id="20_lggff"]
 
 [sub_resource type="Environment" id="Environment_noarx"]
 background_mode = 3
@@ -87,10 +88,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(3.1902206, 0.9933535, 1.2557235)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CamaraMenu:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.21991149, -0.29147, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_jsnrv"]
 resource_name = "cinematica_inicio"
-length = 5.0
+length = 22.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,10 +111,10 @@ tracks/0/path = NodePath("CamaraCinematica:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2.6666667, 3.8666668, 4.366667, 4.866667),
+"times": PackedFloat32Array(0, 2.8666666, 4.5333333, 10.166666, 15.266666, 20.01128),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(3.1902206, 0.7579391, 1.2557235), Vector3(3.1902206, 0.9933535, 1.2557235), Vector3(3.1902206, 0.9933535, 1.2557235), Vector3(2.9769943, 0.9933535, 1.2557235), Vector3(2.7496803, 1.3410147, 1.2557235), Vector3(2.75, 3, 0.443)]
+"values": [Vector3(3.1902206, 0.7579391, 1.2557235), Vector3(3.1902206, 0.9933535, 1.2557235), Vector3(3.1902206, 0.9933535, 1.2557235), Vector3(2.9769943, 0.9933535, 1.2557235), Vector3(2.7496803, 1.3410147, 1.2557235), Vector3(2.75, 2.8, 0.3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -110,16 +123,49 @@ tracks/1/path = NodePath("CamaraCinematica:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.6666667, 3.8666668, 4.366667, 4.866667),
+"times": PackedFloat32Array(0, 4.5333333, 10.166666, 15.266666, 20.01128),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.5707964, 1.5707964, 0), Vector3(0.10019934, 1.5707964, -4.371139e-08), Vector3(0.099483766, 0, 0), Vector3(0.09948373, 0, 0), Vector3(0.09948373, 0, 0)]
+"values": [Vector3(1.5707964, 1.5707964, 0), Vector3(0.10019934, 1.5707964, -4.371139e-08), Vector3(0.099483766, 0, 0), Vector3(0.09948373, 0, 0), Vector3(-0.4118977, 0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("voz_arthur_player")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_lggff")
+}],
+"times": PackedFloat32Array(0.03333333)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_lggff"]
+resource_name = "movimiento_menu"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamaraMenu:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.21991149, -1.3875368, 0), Vector3(-0.21991149, -0.29147, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lggff"]
 _data = {
 &"RESET": SubResource("Animation_ealrb"),
-&"cinematica_inicio": SubResource("Animation_jsnrv")
+&"cinematica_inicio": SubResource("Animation_jsnrv"),
+&"movimiento_menu": SubResource("Animation_lggff")
 }
 
 [node name="Node3D" type="Node3D" unique_id=259118455 node_paths=PackedStringArray("jugador", "camara", "ui_fundido_negro")]
@@ -400,13 +446,18 @@ shape = SubResource("BoxShape3D_wlxy5")
 
 [node name="Voz_telefono_tutorial" type="AudioStreamPlayer3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture/Telefono" unique_id=1054337530]
 stream = ExtResource("13_ealrb")
+unit_size = 2.0
+max_db = 1.0
 
 [node name="AudioTimbre" type="AudioStreamPlayer3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture" unique_id=1489603343]
 stream = ExtResource("13_i0g27")
+volume_db = -5.0
+unit_size = 2.0
+max_db = 1.0
 autoplay = true
 
 [node name="Meshy_AI_estanteria_de_metal_0323192340_texture2" parent="." unique_id=1464581231 instance=ExtResource("12_cdqbm")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.5085099, 1.2897352, 1.7871351)
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.509, 1.29, 1.787)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Meshy_AI_estanteria_de_metal_0323192340_texture2" unique_id=1211817191]
 
@@ -415,7 +466,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020751953, 0.040863037, -0.
 shape = SubResource("BoxShape3D_3v7ru")
 
 [node name="Meshy_AI_estanteria_de_metal_0323192340_texture" parent="." unique_id=512746683 instance=ExtResource("12_cdqbm")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.5085099, 1.2907451, 2.918261)
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.509, 1.29, 2.918)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Meshy_AI_estanteria_de_metal_0323192340_texture" unique_id=270993206]
 
@@ -485,5 +536,11 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
+
+[node name="voz_arthur_player" type="AudioStreamPlayer2D" parent="." unique_id=1794186434]
+volume_db = 5.0
+
+[node name="CamaraMenu" type="Camera3D" parent="." unique_id=1114293774]
+transform = Transform3D(0.9578225, 0.06268576, -0.28043994, 0, 0.97591674, 0.21814324, 0.28736052, -0.2089425, 0.934755, -2.3769536, 3.2476444, 3.0800679)
 
 [editable path="Player"]
