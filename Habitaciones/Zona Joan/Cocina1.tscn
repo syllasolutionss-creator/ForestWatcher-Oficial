@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cyhm5darhbl2w" path="res://Habitaciones/Zona Joan/old_kitchen_dio.glb" id="9_apaov"]
 [ext_resource type="PackedScene" uid="uid://cwdnnkpmduke6" path="res://Habitaciones/Zona Joan/post_apocalyptic_kitchen_utensils.glb" id="10_kgree"]
 [ext_resource type="PackedScene" uid="uid://dia1hf5fvu36i" path="res://Habitaciones/Zona Joan/old_fridge.glb" id="11_hatti"]
-[ext_resource type="PackedScene" uid="uid://bp7tr2nhij4td" path="res://Habitaciones/Zona_Artiitz/broken_ceiling_lamp.glb" id="12_fcy64"]
 [ext_resource type="Script" uid="uid://i0i8csvxg6fr" path="res://Habitaciones/Zona Joan/zona_susto.gd" id="13_dggf6"]
 
 [sub_resource type="Environment" id="Environment_80t2x"]
@@ -296,9 +295,6 @@ transform = Transform3D(-8.7422775e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.742277
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Nevera/StaticBody3D" unique_id=870354163]
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 54.40763, 47.12278, -51.000725)
 shape = SubResource("BoxShape3D_fcy64")
-
-[node name="Lampara" parent="." unique_id=1501717405 instance=ExtResource("12_fcy64")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17130233, 2.265243, 0.53496575)
 
 [node name="ZonaSusto" type="Area3D" parent="." unique_id=720224022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7595601, 0.73946065, 2.5658743)
