@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cu02lk6f1u8n3"]
+
+[ext_resource type="Script" uid="uid://br8btuwnuugm0" path="res://menu_inicio.gd" id="1_ylpju"]
+[ext_resource type="Texture2D" uid="uid://c784jg0rc7bt5" path="res://Imagenes-principal/imagen_inicial.jpeg" id="2_ylpju"]
+[ext_resource type="FontFile" uid="uid://wpb73xwxwtn5" path="res://FUENTES-LETRAS/TypewriterzDemoBold.ttf" id="3_aqwrv"]
+[ext_resource type="AudioStream" uid="uid://dg3yu11kyg8ac" path="res://assets/ambiente_fondo.mp3" id="4_cxoyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxoyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kt2nm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0mag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtu58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ht1qv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7r3j"]
+
+[node name="MenuInicio" type="Control" unique_id=1770772904]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 2.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylpju")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=720762333]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ylpju")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1611431498]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1475128889]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -56.0
+offset_right = 394.0
+offset_bottom = 129.0
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="BotonJugar" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=812556271]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_aqwrv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cxoyd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kt2nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w0mag")
+text = "JUGAR"
+
+[node name="BotonSalir" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1948271394]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9647059, 0.9647059, 0.9647059, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_aqwrv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gtu58")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ht1qv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o7r3j")
+text = "SALIR"
+
+[node name="BotonOpciones" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1491051677]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9647059, 0.9647059, 0.9647059, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_aqwrv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gtu58")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ht1qv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o7r3j")
+text = "OPCIONES"
+
+[node name="BotonCreditos" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1860352943]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9647059, 0.9647059, 0.9647059, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_aqwrv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gtu58")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ht1qv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o7r3j")
+text = "CREDITOS"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1681266065]
+stream = ExtResource("4_cxoyd")
+autoplay = true

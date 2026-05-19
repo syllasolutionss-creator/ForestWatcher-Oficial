@@ -1329,34 +1329,26 @@ func _ejecutar_cinematica_segura():
 	# 1. Bloqueamos al jugador
 	estado_actual = ESTADO_INTERACTUANDO
 	
-	# 2. Hacemos que la cámara de la película sea la principal
-	# Asegúrate de que el nombre sea IDÉNTICO al del árbol de nodos
+	# 2. Activamos la cámara de cine
 	if has_node("CamaraCinematica"):
 		$CamaraCinematica.make_current()
 	
-	# 3. Quitamos la mirilla (opcional)
-	if is_instance_valid(hud_mirilla): hud_mirilla.hide()
-	
-	# 4. Ponemos el fondo negro al principio
-	if is_instance_valid(ui_fundido_negro):
-		ui_fundido_negro.color.a = 1.0
-	
-	# 5. Play a la animación
+	# 3. Arrancamos la animación visual
 	if has_node("AnimationPlayer"):
 		$AnimationPlayer.play("cinematica_inicio")
 	
-	# 6. Efecto de "abrir los ojos": el negro desaparece en 2 segundos
-	var tween = create_tween()
-	if is_instance_valid(ui_fundido_negro):
-		tween.tween_property(ui_fundido_negro, "color:a", 0.0, 2.0)
+	# 4. DISPARAMOS EL AUDIO (audio_defini_animacion1)
+	if is_instance_valid(voz_arthur_player):
+		voz_arthur_player.play()
+		print("¡El audio de Arthur debería estar sonando ahora!")
 	
-	# 7. ESPERAMOS a que la animación termine
-	await $AnimationPlayer.animation_finished
+	# 5. TIEMPO DE ESPERA (Ajusta los segundos a lo que dure tu audio)
+	# Si tu audio dura 12 segundos, pon 12.0
+	await get_tree().create_timer(22.0).timeout 
 	
-	# 8. Volvemos a la cámara del jugador
+	# 6. Devolvemos el control al jugador
 	if is_instance_valid(camara):
 		camara.make_current()
 	
-	# 9. Devolvemos el control
 	estado_actual = ESTADO_EXPLORANDO
-	if is_instance_valid(hud_mirilla): hud_mirilla.show()
+	print("Fin de la cinemática: Jugador libre.")
