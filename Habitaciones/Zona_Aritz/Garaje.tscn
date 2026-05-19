@@ -19,6 +19,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1nqff"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f4mrm"]
+size = Vector3(0.586792, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bar6b"]
 size = Vector3(179.41122, 166.1211, 420.30487)
@@ -76,7 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.448827, 2.722199, -0.296386
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8749628, 0.5991688, 1.3912466)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2007013949]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68358874, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80709183, 0, 0)
 shape = SubResource("BoxShape3D_f4mrm")
 
 [node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("2_spgyc")]
