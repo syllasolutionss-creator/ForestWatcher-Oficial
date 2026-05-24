@@ -4,16 +4,14 @@
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="3_wjdpn"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="4_1paye"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="5_70bho"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="5_dgoq3"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="5_dgoq3"]
 [ext_resource type="PackedScene" uid="uid://bwll7oqah70mo" path="res://Habitaciones/Zona Joan/hanging_kitchen_cupboards.glb" id="6_1paye"]
 [ext_resource type="PackedScene" uid="uid://bk38i0gij2gt6" path="res://Habitaciones/Zona Joan/kitchen_cabinet_library_11_mb.glb" id="7_70bho"]
 [ext_resource type="PackedScene" uid="uid://bwncucghgfv3t" path="res://Habitaciones/Zona Joan/kitchen_counter.glb" id="8_sobc5"]
 [ext_resource type="PackedScene" uid="uid://cyhm5darhbl2w" path="res://Habitaciones/Zona Joan/old_kitchen_dio.glb" id="9_apaov"]
 [ext_resource type="PackedScene" uid="uid://cwdnnkpmduke6" path="res://Habitaciones/Zona Joan/post_apocalyptic_kitchen_utensils.glb" id="10_kgree"]
 [ext_resource type="PackedScene" uid="uid://dia1hf5fvu36i" path="res://Habitaciones/Zona Joan/old_fridge.glb" id="11_hatti"]
-[ext_resource type="PackedScene" path="res://Habitaciones/Zona_Artiitz/broken_ceiling_lamp.glb" id="12_fcy64"]
-[ext_resource type="PackedScene" path="res://Habitaciones/Zona_Artiitz/door_wood.glb" id="13_dx8rl"]
-
+[ext_resource type="Script" uid="uid://i0i8csvxg6fr" path="res://Habitaciones/Zona Joan/zona_susto.gd" id="13_dggf6"]
 
 [sub_resource type="Environment" id="Environment_80t2x"]
 background_mode = 3
@@ -38,6 +36,11 @@ size = Vector3(0.983696, 1.6275024, 0.9967346)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fcy64"]
 size = Vector3(33.41913, 93.734695, 38.931404)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dx8rl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dx8rl"]
+load_path = "res://.godot/imported/68747470733a2f2f692e7974696d672e636f6d2f76692f524e6f48635745387462512f6d617872657364656661756c742e6a7067.jpg-1aab84b1399944bbb95842adaf9f9cdb.ctex"
 
 [node name="Cocina_tscn" type="Node3D" unique_id=1562478256]
 
@@ -293,8 +296,25 @@ transform = Transform3D(-8.7422775e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.742277
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, 54.40763, 47.12278, -51.000725)
 shape = SubResource("BoxShape3D_fcy64")
 
-[node name="Lampara" parent="." unique_id=1501717405 instance=ExtResource("12_fcy64")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17130233, 2.265243, 0.53496575)
+[node name="ZonaSusto" type="Area3D" parent="." unique_id=720224022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7595601, 0.73946065, 2.5658743)
+script = ExtResource("13_dggf6")
 
-[node name="Puerta" parent="." unique_id=1541932314 instance=ExtResource("13_dx8rl")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0375342, -0.060011975, 0.5909615)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZonaSusto" unique_id=307330295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.037237704, 0)
+shape = SubResource("BoxShape3D_dx8rl")
+
+[node name="SonidoSusto" type="AudioStreamPlayer3D" parent="ZonaSusto" unique_id=1052800033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0061758757, -0.73946065, -2.1011784)
+
+[node name="UI_Jumpscare" type="CanvasLayer" parent="ZonaSusto" unique_id=25585168]
+
+[node name="ImagenMonstruo" type="TextureRect" parent="ZonaSusto/UI_Jumpscare" unique_id=42829024]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_dx8rl")
+expand_mode = 2

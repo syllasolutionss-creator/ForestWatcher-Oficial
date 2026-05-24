@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c02t00pib6oa0"
-path="res://.godot/imported/imagen3principal.jpeg-ee4607e6799c553aa7ee4fffa1bb141f.ctex"
+uid="uid://2cm1kyoq41oh"
+path="res://.godot/imported/68747470733a2f2f692e7974696d672e636f6d2f76692f524e6f48635745387462512f6d617872657364656661756c742e6a7067.jpg-1aab84b1399944bbb95842adaf9f9cdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagenes-principal/imagen3principal.jpeg"
-dest_files=["res://.godot/imported/imagen3principal.jpeg-ee4607e6799c553aa7ee4fffa1bb141f.ctex"]
+source_file="res://Habitaciones/Zona Joan/68747470733a2f2f692e7974696d672e636f6d2f76692f524e6f48635745387462512f6d617872657364656661756c742e6a7067.jpg"
+dest_files=["res://.godot/imported/68747470733a2f2f692e7974696d672e636f6d2f76692f524e6f48635745387462512f6d617872657364656661756c742e6a7067.jpg-1aab84b1399944bbb95842adaf9f9cdb.ctex"]
 
 [params]
 

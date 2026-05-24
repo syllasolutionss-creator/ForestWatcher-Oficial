@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxqkdbvm84j7w"]
 
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="1_uosmu"]
+[ext_resource type="Script" uid="uid://dj3k04mlkysb0" path="res://Habitaciones/Zona_Aritz/garaje.gd" id="1_f4mrm"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="1_uosmu"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="2_spgyc"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="3_3qvko"]
 [ext_resource type="PackedScene" uid="uid://c3aw50wlnvhri" path="res://Habitaciones/Zona_Aritz/old_car_-_vaz_2107.glb" id="5_iksj0"]
@@ -13,7 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://cu3ejr73mmqy6" path="res://Habitaciones/calendar_of_george_a._romeros_day_of_the_dead.glb" id="12_3qvko"]
 [ext_resource type="PackedScene" uid="uid://bf7laqgoupn2u" path="res://despensa_-_daniela_fungairino.glb" id="12_12oqq"]
 [ext_resource type="PackedScene" uid="uid://jnv4424prfh6" path="res://sexy_beach_bikini_asian_woman.glb" id="13_1nqff"]
+[ext_resource type="VideoStream" uid="uid://4hfs30uksp7n" path="res://Audio/top-3-escariest-jumescare.ogv" id="14_1nqff"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nqff"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4mrm"]
+size = Vector3(0.586792, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bar6b"]
 size = Vector3(179.41122, 166.1211, 420.30487)
@@ -48,6 +54,7 @@ size = Vector3(3.6663818, 2.4570313, 1.3319397)
 size = Vector3(1.1812134, 2.4440918, 2.8890686)
 
 [node name="Node3D" type="Node3D" unique_id=1017494380]
+script = ExtResource("1_f4mrm")
 
 [node name="Player" parent="." unique_id=576785281 instance=ExtResource("1_uosmu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0371695, 0.38924086, -2.0083709)
@@ -57,6 +64,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1867039992]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1916892275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.837793, 0, 0)
+shape = SubResource("BoxShape3D_1nqff")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1747923025]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8874483, 2.722199, -1.7903374)
@@ -65,8 +74,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8874483, 2.722199, -1.7903
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.448827, 2.722199, -0.29638636)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1615134522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8749628, 0.5991688, 1.3912466)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2007013949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80709183, 0, 0)
+shape = SubResource("BoxShape3D_f4mrm")
 
 [node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("2_spgyc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9050212, 0.10241532, -3.1582198)
@@ -152,9 +164,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3094735, 0.099999905, -2.60
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015113831, 1.0541992, -0.04437256)
 shape = SubResource("BoxShape3D_le6no")
 
-[node name="Puerta Garaje" parent="." unique_id=377723351 instance=ExtResource("8_7v66d")]
-transform = Transform3D(1.4, 0, 0, 0, 0.6, 0, 0, 0, 0.7, 0.612551, 1.2792583, 3.3537307)
-
 [node name="Gasolina1" parent="." unique_id=163464263 instance=ExtResource("9_o5ev1")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6277049, 0.11190212, -2.5991821)
 
@@ -227,3 +236,20 @@ transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 2.294765, 0.90622234, -2.5240
 
 [node name="Sketchfab_Scene3" parent="." unique_id=485552875 instance=ExtResource("13_1nqff")]
 transform = Transform3D(0.19999984, -0.00014820941, 0.00020829447, 0.0001488696, 0.19999894, -0.0006345352, -0.00020782312, 0.00063468976, 0.1999989, 4.801455, 1.5811408, -2.7009907)
+
+[node name="Puerta Garaje" parent="." unique_id=189721387 instance=ExtResource("8_7v66d")]
+transform = Transform3D(1.5, 0, 0, 0, 0.6, 0, 0, 0, 0.5, 0.9839252, 1.2188313, 3.3612678)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=45534189]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1468844769]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("14_1nqff")
+expand = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
