@@ -4,15 +4,16 @@
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="3_wjdpn"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="4_1paye"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="5_70bho"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="5_dgoq3"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="5_dgoq3"]
 [ext_resource type="PackedScene" uid="uid://bwll7oqah70mo" path="res://Habitaciones/Zona Joan/hanging_kitchen_cupboards.glb" id="6_1paye"]
 [ext_resource type="PackedScene" uid="uid://bk38i0gij2gt6" path="res://Habitaciones/Zona Joan/kitchen_cabinet_library_11_mb.glb" id="7_70bho"]
 [ext_resource type="PackedScene" uid="uid://bwncucghgfv3t" path="res://Habitaciones/Zona Joan/kitchen_counter.glb" id="8_sobc5"]
 [ext_resource type="PackedScene" uid="uid://cyhm5darhbl2w" path="res://Habitaciones/Zona Joan/old_kitchen_dio.glb" id="9_apaov"]
 [ext_resource type="PackedScene" uid="uid://cwdnnkpmduke6" path="res://Habitaciones/Zona Joan/post_apocalyptic_kitchen_utensils.glb" id="10_kgree"]
 [ext_resource type="PackedScene" uid="uid://dia1hf5fvu36i" path="res://Habitaciones/Zona Joan/old_fridge.glb" id="11_hatti"]
-[ext_resource type="PackedScene" uid="uid://bp7tr2nhij4td" path="res://Habitaciones/Zona_Artiitz/broken_ceiling_lamp.glb" id="12_fcy64"]
-[ext_resource type="PackedScene" uid="uid://4pje562dpr6i" path="res://Habitaciones/Zona_Artiitz/door_wood.glb" id="13_dx8rl"]
+[ext_resource type="PackedScene" path="res://Habitaciones/Zona_Artiitz/broken_ceiling_lamp.glb" id="12_fcy64"]
+[ext_resource type="PackedScene" path="res://Habitaciones/Zona_Artiitz/door_wood.glb" id="13_dx8rl"]
+
 
 [sub_resource type="Environment" id="Environment_80t2x"]
 background_mode = 3

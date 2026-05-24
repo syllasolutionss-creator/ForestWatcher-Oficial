@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://1xwp7qylticc"]
 
-[ext_resource type="Script" uid="uid://sooi3j78u1" path="res://Habitaciones/Zona_Joan/static_body_3d.gd" id="1_delr1"]
+[ext_resource type="Script" uid="uid://sooi3j78u1" path="res://Habitaciones/Zona Joan/static_body_3d.gd" id="1_delr1"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="4_wfw6k"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://jugador_importado/player.tscn" id="5_2bgu0"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="5_2bgu0"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="5_o6dm0"]
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="5_wfw6k"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="6_o6dm0"]
+
 
 [sub_resource type="Environment" id="Environment_80t2x"]
 background_mode = 3

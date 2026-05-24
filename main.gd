@@ -60,11 +60,11 @@ var opciones_mostradas: bool = false  # CANDADO: evita recrear botones 60 veces/
 # =====================================================================
 # PATHS DE ARCHIVOS
 # =====================================================================
-const PATH_FICHA_ARTHUR := "res://assets/ficha_arthur.png"
+const PATH_FICHA_ARTHUR := "res://ficha_arthur.png"
 const PATH_ICONO_RAYO := "res://assets/icono_rayo.png"
 const PATH_RADIO_ESTATICA := "res://assets/radio_estatica.mp3"
 const PATH_AMBIENTE_FONDO := "res://assets/ambiente_fondo.mp3"
-const PATH_VOZ_ARTHUR := "res://Audio/Voces/voz_arthur_1.MP3"
+const PATH_VOZ_ARTHUR := "res://Audio/Voces/voz_arthur_1.mp3"
 const PATH_VOZ_ARTHUR_A := "res://Audio/Voces/voz_arthur_2a.mp3"
 const PATH_VOZ_ARTHUR_B := "res://Audio/Voces/voz_arthur_2b.mp3"
 const PATH_VOZ_TELEFONO := "res://Audio/Voces/voz_telefono_tutorial.mp3"
@@ -135,7 +135,11 @@ var energia: float = 100.0
 # =====================================================================
 const ESTADO_EXPLORANDO := "EXPLORANDO"
 const ESTADO_INTERACTUANDO := "INTERACTUANDO"
-var estado_actual: String = ESTADO_EXPLORANDO
+var estado_actual: String = ESTADO_EXPLORANDO:
+	set(value):
+		estado_actual = value
+		if is_instance_valid(jugador):
+			jugador.puedo_moverse = (estado_actual == ESTADO_EXPLORANDO)
 var modo_interaccion: bool = false
 
 # =====================================================================
@@ -186,13 +190,14 @@ func _ready() -> void:
 	
 	_cargar_recursos()
 	_crear_ui()
-	_configurar_raycast()
 	_configurar_audio_radio()
 	_configurar_audio_arthur()
 	_configurar_timer_arthur()
 	_configurar_musica_fondo()
 	_crear_acechador()
 	_ejecutar_cinematica_segura()
+	
+	_conectar_interactuables()
 	
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -214,7 +219,6 @@ func _ready() -> void:
 # _PROCESS - ACTUALIZACIÓN POR FRAME
 # =====================================================================
 func _process(delta: float) -> void:
-	_actualizar_auto_enfoque(delta)
 	
 	# Texto escribiéndose (diálogos generales)
 	if hud_dialogo and texto_destino != "" and caracteres_mostrados < texto_destino.length():
@@ -289,60 +293,15 @@ func _process(delta: float) -> void:
 	if is_instance_valid(musica_fondo):
 		musica_fondo.volume_db = lerpf(musica_fondo.volume_db, musica_fondo_objetivo_db, musica_fondo_fade_speed * delta)
 	
-	# Zoom, Mirilla y mensaje [E]
-	var tocando_radio: bool = false
-	var toca_telefono: bool = false
-	var toca_cartel: bool = false
-	var toca_cama: bool = false
-	
+	# Zoom
 	if is_instance_valid(camara) and estado_actual != ESTADO_INTERACTUANDO:
 		var zoom_target: float = fov_normal
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 			zoom_target = fov_zoom
 		camara.fov = lerp(camara.fov, zoom_target, 0.1)
-		tocando_radio = _raycast_toca_radio()
-		
-		if not tocando_radio and is_instance_valid(raycast_radio):
-			raycast_radio.force_raycast_update()
-			if raycast_radio.is_colliding():
-				var col = raycast_radio.get_collider()
-				if col is Node:
-					var n: Node = col as Node
-					while n:
-						if n.name == "Telefono":
-							toca_telefono = true
-							break
-						elif n.name == "Cartel":
-							toca_cartel = true
-							break
-						elif n.name == "Cama":
-							toca_cama = true
-							break
-						n = n.get_parent()
-	
-	var interactuando_con_algo: bool = tocando_radio or (toca_telefono and not telefono_contestado) or (toca_cartel and not inspeccionando_cartel) or (toca_cama and dia_actual == 0)
 	
 	if hud_mirilla:
-		hud_mirilla.color = Color.RED if interactuando_con_algo else Color(1, 1, 1, 0.5)
-	
-	if label_ayuda and interactuando_con_algo:
-		if tocando_radio:
-			label_ayuda.text = "[E] Interactuar con Radio"
-		elif toca_telefono:
-			label_ayuda.text = "[E] Contestar Teléfono"
-		elif toca_cartel:
-			label_ayuda.text = "[E] Inspeccionar Cartel"
-		elif toca_cama:
-			label_ayuda.text = "[E] Dormir"
-	
-	var target_alpha: float = ayuda_max_alpha if interactuando_con_algo else 0.0
-	ayuda_alpha = move_toward(ayuda_alpha, target_alpha, ayuda_fade_speed * delta)
-	
-	if label_ayuda:
-		var col: Color = label_ayuda.modulate
-		col.a = ayuda_alpha
-		label_ayuda.modulate = col
-		label_ayuda.visible = ayuda_alpha > 0.005
+		hud_mirilla.color = Color(1, 1, 1, 0.5)
 	
 	if is_instance_valid(label_salida):
 		var mostrar: bool = (estado_actual == ESTADO_INTERACTUANDO) and _puede_salir()
@@ -356,128 +315,68 @@ func _process(delta: float) -> void:
 		contenedor_rayos.show()
 
 # =====================================================================
-# _PHYSICS_PROCESS - MOVIMIENTO
+# _PHYSICS_PROCESS - MOVIMIENTO (Eliminado para evitar conflictos)
 # =====================================================================
-func _physics_process(delta: float) -> void:
-	if estado_actual == ESTADO_INTERACTUANDO:
-		return
-	if not is_instance_valid(jugador):
-		return
-	
-	if not jugador.is_on_floor():
-		jugador.velocity.y -= gravedad * delta
-	
-	var input_x: float = float(Input.is_key_pressed(KEY_D)) - float(Input.is_key_pressed(KEY_A))
-	var input_z: float = float(Input.is_key_pressed(KEY_S)) - float(Input.is_key_pressed(KEY_W))
-	var has_input: bool = abs(input_x) > 0.0001 or abs(input_z) > 0.0001
-	
-	var target_velocity: Vector3 = Vector3.ZERO
-	if has_input:
-		var local_input: Vector3 = Vector3(input_x, 0.0, input_z).normalized()
-		var direction: Vector3 = jugador.transform.basis * local_input
-		target_velocity.x = direction.x * velocidad_horizontal
-		target_velocity.z = direction.z * velocidad_horizontal
-	
-	var step: float = (aceleracion_horizontal if has_input else frenado_horizontal) * delta
-	jugador.velocity.x = move_toward(jugador.velocity.x, target_velocity.x, step)
-	jugador.velocity.z = move_toward(jugador.velocity.z, target_velocity.z, step)
-	jugador.move_and_slide()
 
 # =====================================================================
 # _INPUT - TECLADO Y RATÓN
 # =====================================================================
 func _input(event: InputEvent) -> void:
-	
-	# --- ESTO ES LO QUE HACE QUE LA CÁMARA SE MUEVA Y PELEE CON EL JUGADOR ---
-	# Ponemos # delante de estas 4 líneas para desactivarlas
-	# if event is InputEventMouseMotion and estado_actual != ESTADO_INTERACTUANDO:
-	# 	if is_instance_valid(jugador) and is_instance_valid(camara):
-	# 		jugador.rotate_y(-event.relative.x * sensibilidad_mouse)
-	# 		rotacion_x = clamp(rotacion_x - event.relative.y * sensibilidad_mouse, -1.2, 1.2)
-	# 		camara.rotation.x = rotacion_x
-	
-	# --- ESTO DEBE QUEDAR SIN # PARA QUE EL JUEGO FUNCIONE ---
 	if event is InputEventKey and event.pressed and not event.echo:
 		if estado_actual == ESTADO_INTERACTUANDO and (event.keycode == KEY_Q or event.keycode == KEY_ESCAPE):
 			if inspeccionando_cartel:
 				_cerrar_inspeccion_cartel()
 			elif _puede_salir():
 				_finalizar_interaccion()
-		elif event.keycode == KEY_E:
-			if estado_actual == ESTADO_INTERACTUANDO:
-				return
-			
-			if is_instance_valid(raycast_radio):
-				raycast_radio.force_raycast_update()
-				if raycast_radio.is_colliding():
-					var col = raycast_radio.get_collider()
-					if col is Node:
-						var n: Node = col as Node
-						var toca_telefono = false
-						var toca_cartel = false
-						var toca_cama = false
-						while n:
-							if n.name == "Telefono":
-								toca_telefono = true
-								break
-							elif n.name == "Cartel":
-								toca_cartel = true
-								break
-							elif n.name == "Cama":
-								toca_cama = true
-								break
-							n = n.get_parent()
-						
-						if toca_telefono and not telefono_contestado:
-							_contestar_telefono()
-							return
-						elif toca_cartel and not inspeccionando_cartel:
-							_abrir_inspeccion_cartel()
-							return
-						elif toca_cama and dia_actual == 0:
-							_ir_a_dormir()
-							return
-			
-			if _raycast_toca_radio():
-				var foco: Vector3 = _obtener_foco_radio()
-				if not radio_encendida:
-					_encender_radio()
-				_iniciar_interaccion(foco)
 
-# =====================================================================
-# RAYCAST
-# =====================================================================
-func _raycast_toca_radio() -> bool:
-	if not is_instance_valid(raycast_radio):
-		return false
-	raycast_radio.force_raycast_update()
-	if not raycast_radio.is_colliding():
-		return false
-	var col: Object = raycast_radio.get_collider()
-	if col == null or not (col is Node):
-		return false
-	var n: Node = col as Node
-	while n:
-		if n.name == "CuerpoRadio":
-			return true
-		n = n.get_parent()
-	return false
+func _conectar_interactuables() -> void:
+	_conectar_recursivo(self)
 
-func _obtener_foco_radio() -> Vector3:
-	if not is_instance_valid(raycast_radio):
-		return Vector3.ZERO
-	raycast_radio.force_raycast_update()
-	if not raycast_radio.is_colliding():
-		return Vector3.ZERO
-	var col: Object = raycast_radio.get_collider()
-	if col == null or not (col is Node):
-		return Vector3.ZERO
-	var n: Node = col as Node
-	while n:
-		if n.name == "CuerpoRadio" and n is Node3D:
-			return (n as Node3D).global_position
-		n = n.get_parent()
-	return raycast_radio.to_global(raycast_radio.target_position)
+func _conectar_recursivo(nodo: Node) -> void:
+	if nodo is Interactuable:
+		if not nodo.interactuado.is_connected(_on_interactuable_accion):
+			nodo.interactuado.connect(_on_interactuable_accion)
+		return
+		
+	# Duck typing: adjuntamos dinámicamente si los nombres coinciden
+	var attach_script = false
+	if nodo.name == "Radio" or nodo.name == "CuerpoRadio":
+		attach_script = true
+	elif nodo.name == "Telefono":
+		attach_script = true
+	elif nodo.name == "Cartel":
+		attach_script = true
+	elif nodo.name == "Cama":
+		attach_script = true
+		
+	if attach_script and not nodo.has_signal("interactuado"):
+		nodo.set_script(load("res://interactuable.gd"))
+		if not nodo.interactuado.is_connected(_on_interactuable_accion):
+			nodo.interactuado.connect(_on_interactuable_accion)
+	
+	for hijo in nodo.get_children():
+		_conectar_recursivo(hijo)
+
+func _on_interactuable_accion(nombre_objeto: String) -> void:
+	if estado_actual == ESTADO_INTERACTUANDO:
+		return
+
+	if "Radio" in nombre_objeto or "CuerpoRadio" in nombre_objeto:
+		if not radio_encendida:
+			_encender_radio()
+		_iniciar_interaccion()
+	
+	elif "Telefono" in nombre_objeto:
+		if not telefono_contestado:
+			_contestar_telefono()
+
+	elif "Cartel" in nombre_objeto:
+		if not inspeccionando_cartel:
+			_abrir_inspeccion_cartel()
+
+	elif "Cama" in nombre_objeto:
+		if dia_actual == 0:
+			_ir_a_dormir()
 
 # =====================================================================
 # AUDIO RADIO
@@ -584,8 +483,6 @@ func _on_timer_arthur_timeout() -> void:
 	if not is_inside_tree():
 		return
 	if estado_actual != ESTADO_INTERACTUANDO:
-		return
-	if not _raycast_toca_radio():
 		return
 	if arthur_ha_aparecido:
 		return
@@ -841,7 +738,6 @@ func _iniciar_interaccion(foco_radio: Vector3 = Vector3.ZERO) -> void:
 	
 	_reiniciar_timer_arthur()
 	_reiniciar_estatica()
-	_iniciar_auto_enfoque(foco_radio)
 	
 	if is_instance_valid(panel_dialogo):
 		panel_dialogo.show()
@@ -863,7 +759,6 @@ func _finalizar_interaccion() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	auto_enfoque_activo = false
 	if is_instance_valid(jugador):
 		jugador.rotation.y = camara_guardada_yaw
 	rotacion_x = camara_guardada_pitch
@@ -910,62 +805,6 @@ func _puede_salir() -> bool:
 	if tutorial_telefono_en_curso:
 		return false
 	return true
-
-# =====================================================================
-# AUTO ENFOQUE CÁMARA
-# =====================================================================
-func _iniciar_auto_enfoque(foco_radio: Vector3) -> void:
-	if not is_instance_valid(jugador) or not is_instance_valid(camara):
-		return
-	if foco_radio == Vector3.ZERO:
-		auto_enfoque_activo = false
-		return
-	
-	var dir_jugador: Vector3 = foco_radio - jugador.global_position
-	dir_jugador.y = 0.0
-	if dir_jugador.length_squared() <= 0.000001:
-		return
-	
-	var dir_camara: Vector3 = foco_radio - camara.global_position
-	if dir_camara.length_squared() <= 0.000001:
-		return
-	
-	dir_camara = dir_camara.normalized()
-	auto_enfoque_yaw_inicio = jugador.rotation.y
-	auto_enfoque_yaw_objetivo = atan2(-dir_jugador.x, -dir_jugador.z)
-	
-	var basis_yaw := Basis(Vector3.UP, auto_enfoque_yaw_objetivo)
-	var dir_local: Vector3 = basis_yaw.inverse() * dir_camara
-	
-	auto_enfoque_pitch_inicio = rotacion_x
-	auto_enfoque_pitch_objetivo = clamp(asin(clampf(dir_local.y, -1.0, 1.0)), -1.2, 1.2)
-	auto_enfoque_tiempo = 0.0
-	auto_enfoque_activo = true
-	
-	if auto_enfoque_duracion <= 0.0:
-		jugador.rotation.y = auto_enfoque_yaw_objetivo
-		rotacion_x = auto_enfoque_pitch_objetivo
-		camara.rotation.x = rotacion_x
-		auto_enfoque_activo = false
-
-func _actualizar_auto_enfoque(delta: float) -> void:
-	if not auto_enfoque_activo:
-		return
-	if not is_instance_valid(jugador) or not is_instance_valid(camara):
-		auto_enfoque_activo = false
-		return
-	
-	var duracion: float = max(auto_enfoque_duracion, 0.001)
-	auto_enfoque_tiempo = min(auto_enfoque_tiempo + delta, duracion)
-	var t: float = auto_enfoque_tiempo / duracion
-	var t_suave: float = t * t * (3.0 - 2.0 * t)
-	
-	jugador.rotation.y = lerp_angle(auto_enfoque_yaw_inicio, auto_enfoque_yaw_objetivo, t_suave)
-	rotacion_x = lerp_angle(auto_enfoque_pitch_inicio, auto_enfoque_pitch_objetivo, t_suave)
-	camara.rotation.x = rotacion_x
-	
-	if t >= 1.0:
-		auto_enfoque_activo = false
 
 # =====================================================================
 # TEXTO

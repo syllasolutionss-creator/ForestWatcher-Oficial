@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://bxqkdbvm84j7w"]
 
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="1_dru18"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="1_dru18"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="2_xdt7b"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="3_eawi3"]
 [ext_resource type="PackedScene" path="res://Habitaciones/Zona_Sedou/puerta.tscn" id="4_owtjj"]
 [ext_resource type="PackedScene" uid="uid://c3aw50wlnvhri" path="res://Habitaciones/Zona_Aritz/old_car_-_vaz_2107.glb" id="5_w8tjd"]
 [ext_resource type="PackedScene" uid="uid://bhb2n7jiqpnn4" path="res://Habitaciones/Zona_Aritz/old_wooden_storage_shelf (1).glb" id="6_w4qbc"]
 [ext_resource type="PackedScene" uid="uid://dmve34syctl8x" path="res://Habitaciones/Zona_Aritz/old_work_bench.glb" id="7_0wxc0"]
-[ext_resource type="PackedScene" uid="uid://c6dovp8cixhwx" path="res://Habitaciones/Zona_Aritz/garage_door.glb" id="8_pdygt"]
+[ext_resource type="PackedScene" uid="uid://cm6q6od1hyqku" path="res://Habitaciones/Zona_Aritz/garage_door.glb" id="8_pdygt"]
 [ext_resource type="PackedScene" uid="uid://byv51hg724adn" path="res://Habitaciones/Zona_Aritz/gasoline_can.glb" id="9_w7uyu"]
 [ext_resource type="PackedScene" uid="uid://docqywthsqrwc" path="res://Habitaciones/Zona_Aritz/low_poly_rusty_metal_drum.glb" id="10_twusy"]
+
 
 
 

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bxqkdbvm84j7w"]
 
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="1_uosmu"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="1_uosmu"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="2_spgyc"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="3_3qvko"]
 [ext_resource type="PackedScene" uid="uid://c3aw50wlnvhri" path="res://Habitaciones/Zona_Aritz/old_car_-_vaz_2107.glb" id="5_iksj0"]
 [ext_resource type="PackedScene" uid="uid://bhb2n7jiqpnn4" path="res://Habitaciones/Zona_Aritz/old_wooden_storage_shelf (1).glb" id="6_wjuot"]
-[ext_resource type="PackedScene" uid="uid://c6dovp8cixhwx" path="res://Habitaciones/Zona_Aritz/garage_door.glb" id="8_7v66d"]
+[ext_resource type="PackedScene" uid="uid://cm6q6od1hyqku" path="res://Habitaciones/Zona_Aritz/garage_door.glb" id="8_7v66d"]
 [ext_resource type="PackedScene" uid="uid://byv51hg724adn" path="res://Habitaciones/Zona_Aritz/gasoline_can.glb" id="9_o5ev1"]
 [ext_resource type="PackedScene" uid="uid://docqywthsqrwc" path="res://Habitaciones/Zona_Aritz/low_poly_rusty_metal_drum.glb" id="10_w1o0b"]
 [ext_resource type="PackedScene" uid="uid://ygk2kcnqefid" path="res://Habitaciones/garage_desk.glb" id="11_3qvko"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cu3ejr73mmqy6" path="res://Habitaciones/calendar_of_george_a._romeros_day_of_the_dead.glb" id="12_3qvko"]
 [ext_resource type="PackedScene" uid="uid://bf7laqgoupn2u" path="res://despensa_-_daniela_fungairino.glb" id="12_12oqq"]
 [ext_resource type="PackedScene" uid="uid://jnv4424prfh6" path="res://sexy_beach_bikini_asian_woman.glb" id="13_1nqff"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bar6b"]
 size = Vector3(179.41122, 166.1211, 420.30487)

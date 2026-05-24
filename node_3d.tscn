@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4dy33gq8w0at" path="res://main.gd" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://y4c4lyjcdqyj" path="res://Meshy_AI_Faceted_Radio2_0317180303_texture.glb" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://cdhvjqu7431g7" path="res://Meshy_AI_lampara_3d_0317200120_texture.glb" id="3_a0tk4"]
+[ext_resource type="Script" uid="uid://byos3x1s4maqd" path="res://interactuable.gd" id="3_lggff"]
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://5x4g7pwr2wts" path="res://Meshy_AI_Rustic_Farmhouse_Tabl_0318193457_texture.glb" id="7_wc5p8"]
 [ext_resource type="PackedScene" uid="uid://j05y32vgv0ry" path="res://MODELOS 2D/Meshy_AI_cama3d_0323112513_texture.glb" id="9_4arys"]
@@ -18,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="17_ealrb"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="18_i0g27"]
 [ext_resource type="PackedScene" uid="uid://bicmitu0u7cqc" path="res://Habitaciones/Zona_Sedou/Objetosen3D/old_simple_drawer.glb" id="19_ealrb"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="20_jsnrv"]
-[ext_resource type="AudioStream" uid="uid://br1sk3yeuxqe" path="res://Audio/Voces/audio_defini_animacion1.wav" id="20_lggff"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="20_jsnrv"]
+[ext_resource type="AudioStream" uid="uid://b1d3i6r17mwlq" path="res://Audio/Voces/audio_defini_animacion1.wav" id="20_lggff"]
 
 [sub_resource type="Environment" id="Environment_noarx"]
 background_mode = 3
@@ -179,6 +180,8 @@ environment = SubResource("Environment_noarx")
 
 [node name="Radio" parent="." unique_id=105283617 instance=ExtResource("2_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3519095, 1.4636834, -2.5306952)
+script = ExtResource("3_lggff")
+nombre_para_mostrar = "Usar Radio"
 
 [node name="CuerpoRadio" type="StaticBody3D" parent="Radio" unique_id=1144812036]
 
@@ -416,6 +419,8 @@ shape = SubResource("BoxShape3D_tereu")
 
 [node name="cama_habitacion_principal" parent="." unique_id=1779443350 instance=ExtResource("9_4arys")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.720055, 0.5899056, 1.6006095)
+script = ExtResource("3_lggff")
+nombre_para_mostrar = "Dormir Cama"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="cama_habitacion_principal" unique_id=1510008028]
 
@@ -432,24 +437,26 @@ transform = Transform3D(-0.7, 0, -6.119594e-08, 0, 0.7, 0, 6.119594e-08, 0, -0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15445709, -0.11117554)
 shape = SubResource("BoxShape3D_cdqbm")
 
-[node name="Meshy_AI_telefono_de_mesa_0323190242_texture" parent="." unique_id=1218485651 instance=ExtResource("11_tereu")]
+[node name="telefono" parent="." unique_id=1218485651 instance=ExtResource("11_tereu")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.2359967, 1.3589255, -2.4192357)
+script = ExtResource("3_lggff")
+nombre_para_mostrar = "Contestar Teléfono"
 
-[node name="Telefono" type="StaticBody3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture" unique_id=1158833206]
+[node name="Telefono" type="StaticBody3D" parent="telefono" unique_id=1158833206]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture/Telefono" unique_id=722661027]
+[node name="StaticBody3D" type="StaticBody3D" parent="telefono/Telefono" unique_id=722661027]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture/Telefono/StaticBody3D" unique_id=1475048090]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="telefono/Telefono/StaticBody3D" unique_id=1475048090]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.051879406, -0.030761242, 0.25726318)
 shape = SubResource("BoxShape3D_wlxy5")
 
-[node name="Voz_telefono_tutorial" type="AudioStreamPlayer3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture/Telefono" unique_id=1054337530]
+[node name="Voz_telefono_tutorial" type="AudioStreamPlayer3D" parent="telefono/Telefono" unique_id=1054337530]
 stream = ExtResource("13_ealrb")
 unit_size = 2.0
 max_db = 1.0
 
-[node name="AudioTimbre" type="AudioStreamPlayer3D" parent="Meshy_AI_telefono_de_mesa_0323190242_texture" unique_id=1489603343]
+[node name="AudioTimbre" type="AudioStreamPlayer3D" parent="telefono" unique_id=1489603343]
 stream = ExtResource("13_i0g27")
 volume_db = -5.0
 unit_size = 2.0
@@ -541,6 +548,6 @@ metadata/_edit_use_anchors_ = true
 volume_db = 5.0
 
 [node name="CamaraMenu" type="Camera3D" parent="." unique_id=1114293774]
-transform = Transform3D(0.9578225, 0.06268576, -0.28043994, 0, 0.97591674, 0.21814324, 0.28736052, -0.2089425, 0.934755, -2.3769536, 3.2476444, 3.0800679)
+transform = Transform3D(0.9578225, 0.06268575, -0.28043994, 0, 0.9759166, 0.21814324, 0.28736052, -0.20894247, 0.934755, -2.3769536, 3.2476444, 3.0800679)
 
 [editable path="Player"]

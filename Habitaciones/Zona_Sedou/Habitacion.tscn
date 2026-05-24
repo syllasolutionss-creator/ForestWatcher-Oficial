@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://beplbrnh057o1" path="res://Habitaciones/Zona_Sedou/Objetosen3D/desk.glb" id="21_3w5m7"]
 [ext_resource type="PackedScene" uid="uid://dgdgjltejtdvh" path="res://Habitaciones/Zona_Sedou/Objetosen3D/new_york_city_police_investigation_board.glb" id="22_j5ygm"]
 [ext_resource type="PackedScene" uid="uid://tujpj6sjwx38" path="res://Habitaciones/Zona_Sedou/Objetosen3D/industrial_wall_light.glb" id="23_j5ygm"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="23_skxdf"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="23_skxdf"]
 [ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://Habitaciones/Zona_Sedou/Assets_Importados/MaquinaTragaperras.tscn" id="24_skxdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]

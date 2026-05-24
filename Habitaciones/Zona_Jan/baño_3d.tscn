@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w4nqo"]
 [ext_resource type="PackedScene" uid="uid://d4frt5mmw2f7a" path="res://Habitaciones/Zona_Jan/spider_with_animation.glb" id="3_g325i"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="4_s6fgw"]
+[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="4_s6fgw"]
 [ext_resource type="PackedScene" uid="uid://bh1gst6lk2v4g" path="res://Habitaciones/Zona_Jan/weathered_fluorescent_lightlamp_-_4096px2.glb" id="5_6kk6x"]
 [ext_resource type="PackedScene" uid="uid://c8sdj5u3e60mn" path="res://Habitaciones/Zona_Jan/dirty_cardboard_box.glb" id="6_g325i"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="6_ioaa6"]
@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="15_b0uw4"]
 [ext_resource type="PackedScene" uid="uid://dp0luntsidbye" path="res://Habitaciones/Zona_Jan/wall_lamp.glb" id="16_inoaq"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="17_njuns"]
+
 
 [sub_resource type="Environment" id="Environment_6kk6x"]
 background_mode = 3

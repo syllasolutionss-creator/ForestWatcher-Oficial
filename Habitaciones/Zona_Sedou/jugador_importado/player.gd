@@ -1,6 +1,11 @@
 extends CharacterBody3D
 
+# --- AÑADE ESTA LÍNEA AQUÍ ARRIBA ---
+var puedo_moverse: bool = true 
+# ------------------------------------
+
 const FOV_NORMAL = 75.0
+# ... (el resto de tus constantes y @onready)
 const FOV_ZOOM = 55.0  # Zoom corto
 const SPEED = 5.0
 const SENSITIVITY = 0.003
