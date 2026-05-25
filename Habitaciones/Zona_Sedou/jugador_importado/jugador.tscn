@@ -4,7 +4,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.41992188
-height = 2.526123
 
 [node name="Player" type="CharacterBody3D" unique_id=576785281 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6953712, 0)

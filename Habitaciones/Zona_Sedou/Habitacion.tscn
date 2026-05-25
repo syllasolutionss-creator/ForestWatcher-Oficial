@@ -207,4 +207,13 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0
 [node name="maquina_gambling_sedou" parent="MaquinaTragaperras" index="0" unique_id=524177035]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.023096561, 0)
 
+[node name="Muro_Troncos4" parent="." unique_id=618206751 instance=ExtResource("1_w3udf")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.6538055, 3.4765625, 1.0127559)
+
+[node name="Muro_Troncos5" parent="." unique_id=332667925 instance=ExtResource("1_w3udf")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.149456, 3.4765625, 1.0127559)
+
+[node name="Muro_Troncos6" parent="." unique_id=91759186 instance=ExtResource("1_w3udf")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.578145, 3.4765625, 1.0127559)
+
 [editable path="MaquinaTragaperras"]

@@ -13,9 +13,6 @@
 [sub_resource type="Environment" id="Environment_80t2x"]
 background_mode = 3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6dm0"]
-albedo_color = Color(0.30980393, 0.4745098, 0.25882354, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_70bho"]
 size = Vector3(2.022461, 2.9925537, 5.651016)
 
@@ -62,12 +59,6 @@ environment = SubResource("Environment_80t2x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16703855, 2.4330778, 0.50154173)
 light_energy = 0.7
 omni_range = 31.454
-
-[node name="Suelo_Bosque" type="CSGBox3D" parent="." unique_id=1582153301]
-transform = Transform3D(0.99974614, 0, 0.022530293, 0, 1, 0, -0.022530293, 0, 0.99974614, 0.019040108, -0.56001174, -5.682956)
-use_collision = true
-size = Vector3(100, 1, 100)
-material = SubResource("StandardMaterial3D_o6dm0")
 
 [node name="Suelo_Madera" parent="." unique_id=714591706 instance=ExtResource("3_dgoq3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.21974778, 0.10241532, 0.40673018)
