@@ -21,7 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://beplbrnh057o1" path="res://Habitaciones/Zona_Sedou/Objetosen3D/desk.glb" id="21_3w5m7"]
 [ext_resource type="PackedScene" uid="uid://dgdgjltejtdvh" path="res://Habitaciones/Zona_Sedou/Objetosen3D/new_york_city_police_investigation_board.glb" id="22_j5ygm"]
 [ext_resource type="PackedScene" uid="uid://tujpj6sjwx38" path="res://Habitaciones/Zona_Sedou/Objetosen3D/industrial_wall_light.glb" id="23_j5ygm"]
+[ext_resource type="Script" uid="uid://d14871pd84c23" path="res://Habitaciones/Zona_Sedou/SUSTO.gd" id="23_kwmrr"]
+[ext_resource type="Texture2D" uid="uid://b4kbab5ireyaf" path="res://IMAGENES/images (1).jpg" id="24_nc6io"]
 [ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://Habitaciones/Zona_Sedou/Assets_Importados/MaquinaTragaperras.tscn" id="24_skxdf"]
+[ext_resource type="AudioStream" uid="uid://jkadmgmp704e" path="res://Audio/Voces/freesound_community-scream-with-echo-46585.mp3" id="25_m3gl8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]
 albedo_texture = ExtResource("8_h65u6")
@@ -59,6 +62,8 @@ size = Vector3(4.231079, 3.8990784, 2.9523926)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skxdf"]
 size = Vector3(1.753418, 0.8378296, 1.1912842)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b87n5"]
 
 [node name="Node3D" type="Node3D" unique_id=1910458292]
 
@@ -215,5 +220,25 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.14
 
 [node name="Muro_Troncos6" parent="." unique_id=91759186 instance=ExtResource("1_w3udf")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.578145, 3.4765625, 1.0127559)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1990585208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0238187, 0, 1.2198781)
+script = ExtResource("23_kwmrr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=4121484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47652698, 1.6355133, 0)
+shape = SubResource("BoxShape3D_b87n5")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D" unique_id=742889576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2701609, -0.70806277)
+visible = false
+billboard = 1
+texture = ExtResource("24_nc6io")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D" unique_id=2076366518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3983202, 0)
+stream = ExtResource("25_m3gl8")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 
 [editable path="MaquinaTragaperras"]

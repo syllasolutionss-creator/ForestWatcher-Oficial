@@ -7,6 +7,61 @@
 [ext_resource type="PackedScene" uid="uid://gin1air5nyno" path="res://node_3d.tscn" id="5_77akm"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="6_llgw2"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="7_ojqma"]
+[ext_resource type="Texture2D" uid="uid://bw1pbbq5xbhpp" path="res://IMAGENES/Jeffrey_Epstein_mug_shot.jpg" id="8_lpvwf"]
+[ext_resource type="Script" uid="uid://dw5fyvl5utmv5" path="res://susto2J.gd" id="9_dcnuq"]
+[ext_resource type="AudioStream" uid="uid://c84xkedgrme4d" path="res://Audio/Voces/me-corroooo-aaaaaaagh.wav" id="10_dcnuq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcnuq"]
+size = Vector3(1.1878662, 1.2158203, 1.5957031)
+
+[sub_resource type="Animation" id="Animation_81td7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.4772958, 1.8945141, 0.88611054)]
+}
+
+[sub_resource type="Animation" id="Animation_dcnuq"]
+resource_name = "ataque_monstruo"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.4772958, 1.8945141, 0.88611054), Vector3(1.4772958, 1.8945141, 0.88611054), Vector3(1.4772958, 1.8945141, -10.006573)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dlw4"]
+_data = {
+&"RESET": SubResource("Animation_81td7"),
+&"ataque_monstruo": SubResource("Animation_dcnuq")
+}
 
 [node name="Node3D" type="Node3D" unique_id=1933800745]
 
@@ -20,10 +75,19 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.59
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.11238694, 5.69162)
 
 [node name="Baño3d" parent="." unique_id=432860490 instance=ExtResource("3_cheee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8116176, 0.19719148, -3.3712943)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8116176, 0.13382387, -3.3712943)
 
 [node name="Node3D" parent="." unique_id=259118455 instance=ExtResource("5_77akm")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.216627, 0, -7.914715)
+
+[node name="Meshy_AI_Rustic_Farmhouse_Tabl_0318193457_texture" parent="Node3D" index="6" unique_id=2001381449]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.4026217, 0.63151395, -10.149695)
+
+[node name="Meshy_AI_Rustic_Farmhouse_Tabl_0318193457_texture2" parent="Node3D" index="7" unique_id=311191695]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.506542, 0.6340641, -6.3936152)
+
+[node name="CamaraMenu" parent="Node3D" index="28" unique_id=1114293774]
+transform = Transform3D(0.9578225, 0.06268573, -0.28043994, 0, 0.97591627, 0.21814324, 0.28736052, -0.2089424, 0.934755, -2.3769536, 3.2476444, 3.0800679)
 
 [node name="Muro_Troncos" parent="." unique_id=295733535 instance=ExtResource("6_llgw2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.1329465, 0.36608905, -11.833408)
@@ -48,3 +112,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6711599, -0.1176095, -9.575
 
 [node name="Suelo_Madera2" parent="." unique_id=1707009078 instance=ExtResource("7_ojqma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6711599, -0.1176095, -2.7665746)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=264564464 node_paths=PackedStringArray("monstruo_sprite")]
+script = ExtResource("9_dcnuq")
+monstruo_sprite = NodePath("Sprite3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1676284211]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.3704648, 1.273741, -4.740344)
+shape = SubResource("BoxShape3D_dcnuq")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D" unique_id=974192686]
+transform = Transform3D(0.99998873, 0.004545652, -0.0013912107, -0.004543874, 0.99998885, 0.0012782359, 0.0013970057, -0.0012719001, 0.9999982, 1.4772958, 1.8945141, 0.88611054)
+visible = false
+billboard = 2
+texture = ExtResource("8_lpvwf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D/Sprite3D" unique_id=2083917344]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_3dlw4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="Area3D/Sprite3D" unique_id=257420549]
+stream = ExtResource("10_dcnuq")
+volume_db = 20.0
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+
+[editable path="Node3D"]
+[editable path="Node3D/Player"]

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bf7laqgoupn2u" path="res://despensa_-_daniela_fungairino.glb" id="12_12oqq"]
 [ext_resource type="PackedScene" uid="uid://jnv4424prfh6" path="res://sexy_beach_bikini_asian_woman.glb" id="13_1nqff"]
 [ext_resource type="VideoStream" uid="uid://4hfs30uksp7n" path="res://Audio/top-3-escariest-jumescare.ogv" id="14_1nqff"]
+[ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="15_f4mrm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1nqff"]
 
@@ -105,9 +106,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.90
 
 [node name="Muro_Troncos6" parent="." unique_id=1754472012 instance=ExtResource("2_spgyc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.954456, 0.10241532, 3.5388994)
-
-[node name="Muro_Troncos2" parent="." unique_id=607933329 instance=ExtResource("2_spgyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.348295, 0.09759879, 2.2038012)
 
 [node name="Muro_Troncos12" parent="." unique_id=177179846 instance=ExtResource("2_spgyc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.348295, 3.4147866, 2.2038012)
@@ -247,5 +245,11 @@ grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("14_1nqff")
 expand = true
+
+[node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("15_f4mrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2345955, 0.19626015, 0.2527578)
+
+[node name="Muro_Troncos2" parent="." unique_id=604849834 instance=ExtResource("2_spgyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.235, 0.196, 4.738029)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
