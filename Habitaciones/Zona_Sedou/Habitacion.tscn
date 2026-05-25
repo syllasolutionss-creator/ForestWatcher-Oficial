@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://beplbrnh057o1" path="res://Habitaciones/Zona_Sedou/Objetosen3D/desk.glb" id="21_3w5m7"]
 [ext_resource type="PackedScene" uid="uid://dgdgjltejtdvh" path="res://Habitaciones/Zona_Sedou/Objetosen3D/new_york_city_police_investigation_board.glb" id="22_j5ygm"]
 [ext_resource type="PackedScene" uid="uid://tujpj6sjwx38" path="res://Habitaciones/Zona_Sedou/Objetosen3D/industrial_wall_light.glb" id="23_j5ygm"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="23_skxdf"]
 [ext_resource type="PackedScene" uid="uid://btq46ge41h" path="res://Habitaciones/Zona_Sedou/Assets_Importados/MaquinaTragaperras.tscn" id="24_skxdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4237"]
@@ -201,9 +200,6 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 2.3337128, 2.325106,
 
 [node name="OmniLight3D" type="OmniLight3D" parent="luz_escritorio" unique_id=619162605]
 omni_range = 1.2
-
-[node name="Player" parent="." unique_id=576785281 instance=ExtResource("23_skxdf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.103851, 2.8658962, -0.42037922)
 
 [node name="MaquinaTragaperras" parent="." unique_id=448147152 instance=ExtResource("24_skxdf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.018837944, 1.3186121, -0.6161213)

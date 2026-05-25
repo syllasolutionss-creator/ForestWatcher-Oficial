@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="1_w4nqo"]
 [ext_resource type="PackedScene" uid="uid://d4frt5mmw2f7a" path="res://Habitaciones/Zona_Jan/spider_with_animation.glb" id="3_g325i"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/jugador.tscn" id="4_s6fgw"]
 [ext_resource type="PackedScene" uid="uid://bh1gst6lk2v4g" path="res://Habitaciones/Zona_Jan/weathered_fluorescent_lightlamp_-_4096px2.glb" id="5_6kk6x"]
 [ext_resource type="PackedScene" uid="uid://c8sdj5u3e60mn" path="res://Habitaciones/Zona_Jan/dirty_cardboard_box.glb" id="6_g325i"]
 [ext_resource type="PackedScene" uid="uid://cdn6832din2ba" path="res://Habitaciones/Zona_Sedou/muro_con_puerta.tscn" id="6_ioaa6"]
@@ -14,10 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://du40a7eanepde" path="res://Habitaciones/Zona_Jan/alien_3_movie_poster.glb" id="12_dhx0n"]
 [ext_resource type="PackedScene" uid="uid://bm4n7jvyma2cd" path="res://Habitaciones/Zona_Jan/bath.glb" id="13_v6s84"]
 [ext_resource type="PackedScene" uid="uid://bp3irfo1c3c3" path="res://Habitaciones/Zona_Jan/hand.glb" id="14_ufop1"]
-[ext_resource type="ArrayMesh" uid="uid://qc71x0v7sdjb" path="res://Modelos/OBJ-20260318T013939Z-3-001/OBJ/PineTree_3.obj" id="15_b0uw4"]
 [ext_resource type="PackedScene" uid="uid://dp0luntsidbye" path="res://Habitaciones/Zona_Jan/wall_lamp.glb" id="16_inoaq"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="17_njuns"]
-
 
 [sub_resource type="Environment" id="Environment_6kk6x"]
 background_mode = 3
@@ -46,9 +43,6 @@ size = Vector3(0.4192505, 1.7377319, 1.2781982)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmw2u"]
 size = Vector3(365.6432, 138.26193, 181.72314)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
-albedo_color = Color(0.30980393, 0.4745098, 0.25882354, 1)
-
 [node name="Baño3d" type="Node3D" unique_id=432860490]
 
 [node name="Muro_Troncos2" parent="." unique_id=1566274044 instance=ExtResource("1_w4nqo")]
@@ -65,9 +59,6 @@ transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 
 [node name="Sketchfab_Scene" parent="." unique_id=851710937 instance=ExtResource("3_g325i")]
 transform = Transform3D(0.673201, -0.05427432, -0.42878276, 0.43220407, 0.08453771, 0.667872, 2.3841858e-08, -0.79366726, 0.10046058, 1.3904395, 2.1515465, 5.2559047)
-
-[node name="Player" parent="." unique_id=576785281 instance=ExtResource("4_s6fgw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.641567, 2.506083, 2.19759)
 
 [node name="Sketchfab_Scene2" parent="." unique_id=2096255948 instance=ExtResource("5_6kk6x")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 3.6471202, 2.634442, -1.0489371)
@@ -184,155 +175,6 @@ shape = SubResource("BoxShape3D_gmw2u")
 
 [node name="Sketchfab_Scene14" parent="." unique_id=144704594 instance=ExtResource("14_ufop1")]
 transform = Transform3D(0.14630128, -0.113282636, -0.23614185, -0.1836693, -0.23720367, 0, -0.18671237, 0.14457336, -0.18503246, 2.050157, 0.48935026, 4.4441247)
-
-[node name="Suelo_Bosque" type="CSGBox3D" parent="." unique_id=17720119]
-transform = Transform3D(0.99974614, 0, 0.022530293, 0, 1, 0, -0.022530293, 0, 0.99974614, 0.038871765, -0.5791309, -0.06335688)
-size = Vector3(100, 1, 100)
-material = SubResource("StandardMaterial3D_r3fl7")
-
-[node name="PineTree4" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1349119062]
-transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, 0.80228007, 0.19931889, -5.158773)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree5" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1730686487]
-transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, -1.6628687, 0.19931889, 18.438112)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree6" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1937389082]
-transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 2.28259, 0.19931889, 10.4256735)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree7" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=297244035]
-transform = Transform3D(1.0000008, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1.0000008, -9.516268, 0.19931889, 14.422582)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree8" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=509576246]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, -12.643298, 0.19931889, 2.5775)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree9" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1618781835]
-transform = Transform3D(1.0000008, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1.0000008, 4.327011, 0.19931889, 24.556414)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree10" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1794877929]
-transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, 4.459513, 0.19931889, -2.9719481)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree11" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1689261084]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 6.2523284, 0.19931889, 19.916943)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree12" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1951231768]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 11.703841, 0.19931889, 11.492199)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree13" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=48680249]
-transform = Transform3D(1.0000011, 0, 1.1175871e-08, 0, 1, 0, -1.1175871e-08, 0, 1.0000011, 3.788813, 0.19931889, 14.852728)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree14" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1890177201]
-transform = Transform3D(1.0000011, 0, 1.1175871e-08, 0, 1, 0, -1.1175871e-08, 0, 1.0000011, -5.0770497, 0.19931889, 1.1775233)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree15" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1440798733]
-transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -3.3801217, 0.19931889, -5.66705)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree16" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=376100635]
-transform = Transform3D(1.0000005, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000005, -5.995918, 0.19931889, 10.861495)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree17" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=848640674]
-transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, -2.3956327, 0.19931889, 9.385243)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree18" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=2007090619]
-transform = Transform3D(1.0000008, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1.0000008, 20.024979, 0.19931889, 10.261279)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree19" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1727029400]
-transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, -7.6731462, 0.19931889, -3.5152724)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree20" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=426891693]
-transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, -1.9139507, 0.19931889, -11.776085)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree21" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1377468337]
-transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -7.4862976, 0.19931889, 7.3442216)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree22" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=636033790]
-transform = Transform3D(1.0000004, 0, 3.7252903e-09, 0, 1, 0, -3.7252903e-09, 0, 1.0000004, -5.953659, 0.19931889, -9.558481)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree23" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1298755124]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 16.532991, 0.19931889, 2.6847663)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree24" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=397587434]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 17.704922, 0.19931889, -13.999559)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree25" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1564123599]
-transform = Transform3D(1.0000011, 0, 1.1175871e-08, 0, 1, 0, -1.1175871e-08, 0, 1.0000011, -4.842578, 0.19931889, -15.081426)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree26" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1166937761]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 0.21980137, 0.19931889, -17.845253)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree27" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=397926626]
-transform = Transform3D(1.0000006, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000006, -8.42551, 0.19931889, -11.023308)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree28" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1390366319]
-transform = Transform3D(1.0000008, 0, 7.450581e-09, 0, 1, 0, -7.450581e-09, 0, 1.0000008, -10.506496, 0.19931889, -6.7371354)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree29" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=2008364387]
-transform = Transform3D(1.0000007, 0, 5.5879354e-09, 0, 1, 0, -5.5879354e-09, 0, 1.0000007, 14.426683, 0.19931889, -2.1838727)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree30" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=944175163]
-transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, 8.626113, 0.19931889, 7.376001)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree31" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1389117404]
-transform = Transform3D(1.000001, 0, 9.313226e-09, 0, 1, 0, -9.313226e-09, 0, 1.000001, 9.032286, 0.19931889, -4.276298)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree32" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1937439461]
-transform = Transform3D(1.0000018, 0, 1.6763806e-08, 0, 1, 0, -1.6763806e-08, 0, 1.0000018, 9.335985, 0.19931889, 1.451461)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree33" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1459780165]
-transform = Transform3D(1.0000021, 0, 2.2351742e-08, 0, 1, 0, -2.2351742e-08, 0, 1.0000021, 16.81362, 0.19931889, 8.26927)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree34" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=66273168]
-transform = Transform3D(1.0000023, 0, 2.4214387e-08, 0, 1, 0, -2.4214387e-08, 0, 1.0000023, 12.878977, 0.19931889, -7.191359)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree35" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1538460193]
-transform = Transform3D(1.0000023, 0, 2.4214387e-08, 0, 1, 0, -2.4214387e-08, 0, 1.0000023, 6.959068, 0.19931889, -9.515735)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree36" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=112547754]
-transform = Transform3D(1.0000027, 0, 2.7939677e-08, 0, 1, 0, -2.7939677e-08, 0, 1.0000027, 11.249552, 0.19931889, -9.9389925)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree37" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1084290206]
-transform = Transform3D(1.0000029, 0, 2.7939677e-08, 0, 1, 0, -2.7939677e-08, 0, 1.0000029, 3.5782528, 0.19931889, -12.630348)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree38" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1069439008]
-transform = Transform3D(1.0000031, 0, 3.1664968e-08, 0, 1, 0, -3.1664968e-08, 0, 1.0000031, 6.448364, 0.19931889, -23.223705)
-mesh = ExtResource("15_b0uw4")
-
-[node name="PineTree39" type="MeshInstance3D" parent="Suelo_Bosque" unique_id=1029387657]
-transform = Transform3D(1.0000032, 0, 3.1664968e-08, 0, 1, 0, -3.1664968e-08, 0, 1.0000032, 8.549616, 0.19931889, -17.151072)
-mesh = ExtResource("15_b0uw4")
 
 [node name="Sketchfab_Scene17" parent="." unique_id=743372578 instance=ExtResource("16_inoaq")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 4.482033, 1.755766, 5.2653384)

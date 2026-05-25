@@ -48,7 +48,7 @@ size = Vector3(1.8828125, 0.678833, 1.923584)
 size = Vector3(1, 1.447464, 0.7776489)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wlxy5"]
-size = Vector3(2.071045, 1.2737427, 2.6735992)
+size = Vector3(2.071045, 1.4625244, 3.3442688)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3v7ru"]
 size = Vector3(0.9584961, 1.923523, 0.5822754)
@@ -385,30 +385,30 @@ transform = Transform3D(-0.7, 0, -6.119594e-08, 0, 0.7, 0, 6.119594e-08, 0, -0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15445709, -0.11117554)
 shape = SubResource("BoxShape3D_cdqbm")
 
-[node name="Telefono_Interactivo" type="StaticBody3D" parent="." unique_id=303887281]
+[node name="telefono" parent="." unique_id=1218485651 instance=ExtResource("11_tereu")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.2359967, 1.3589255, -2.4192357)
 script = ExtResource("3_lggff")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Telefono_Interactivo" unique_id=1475048090]
-transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, 0.05187893, 0.26412964, 0.83679914)
-shape = SubResource("BoxShape3D_wlxy5")
+[node name="Telefono" type="StaticBody3D" parent="telefono" unique_id=1158833206]
 
-[node name="telefono" parent="Telefono_Interactivo" unique_id=1218485651 instance=ExtResource("11_tereu")]
+[node name="StaticBody3D" type="StaticBody3D" parent="telefono/Telefono" unique_id=722661027]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="AudioTimbre" type="AudioStreamPlayer3D" parent="Telefono_Interactivo/telefono" unique_id=1489603343]
-transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="telefono/Telefono/StaticBody3D" unique_id=1475048090]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.05187893, 0.16973925, 1.1721339)
+shape = SubResource("BoxShape3D_wlxy5")
+
+[node name="Voz_telefono_tutorial" type="AudioStreamPlayer3D" parent="telefono/Telefono" unique_id=1054337530]
+stream = ExtResource("10_lggff")
+unit_size = 2.0
+max_db = 1.0
+
+[node name="AudioTimbre" type="AudioStreamPlayer3D" parent="telefono" unique_id=1489603343]
 stream = ExtResource("13_i0g27")
 volume_db = -5.0
 unit_size = 2.0
 max_db = 1.0
 autoplay = true
-
-[node name="Voz_telefono_tutorial" type="AudioStreamPlayer3D" parent="Telefono_Interactivo/telefono" unique_id=1054337530]
-transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0, 0, 0)
-stream = ExtResource("10_lggff")
-unit_size = 2.0
-max_db = 1.0
 
 [node name="Meshy_AI_estanteria_de_metal_0323192340_texture2" parent="." unique_id=1464581231 instance=ExtResource("12_cdqbm")]
 transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.509, 1.29, 1.787)
@@ -459,7 +459,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.100961, 0.20573586, 2.2987
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9746132, 0.20573586, 2.2291715)
 
 [node name="Muro_Troncos4" parent="." unique_id=876011155 instance=ExtResource("16_i0g27")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3632953, 0.20573598, -3.247617)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3632953, 0.20573586, -3.247617)
 
 [node name="CSGCombiner3D" parent="." unique_id=1561141313 instance=ExtResource("17_ealrb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.436801, 0.206, 3.8416939)
@@ -495,6 +495,6 @@ metadata/_edit_use_anchors_ = true
 volume_db = 5.0
 
 [node name="CamaraMenu" type="Camera3D" parent="." unique_id=1114293774]
-transform = Transform3D(0.9578225, 0.062685736, -0.28043994, 0, 0.97591645, 0.21814324, 0.28736052, -0.20894244, 0.934755, -2.3769536, 3.2476444, 3.0800679)
+transform = Transform3D(0.9578225, 0.06268574, -0.28043994, 0, 0.9759165, 0.21814324, 0.28736052, -0.20894246, 0.934755, -2.3769536, 3.2476444, 3.0800679)
 
 [editable path="Player"]

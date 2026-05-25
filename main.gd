@@ -333,7 +333,7 @@ func _conectar_interactuables() -> void:
 	_conectar_recursivo(self)
 
 func _conectar_recursivo(nodo: Node) -> void:
-	if nodo is Interactuable:
+	if nodo.has_method("interactuar"):
 		if not nodo.interactuado.is_connected(_on_interactuable_accion):
 			nodo.interactuado.connect(_on_interactuable_accion)
 		return
@@ -1079,14 +1079,7 @@ func _crear_ui() -> void:
 func _contestar_telefono() -> void:
 	telefono_contestado = true
 	tutorial_telefono_en_curso = true
-	estado_actual = ESTADO_INTERACTUANDO
-	modo_interaccion = true
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if is_instance_valid(jugador):
-		camara_guardada_yaw = jugador.rotation.y
-		camara_guardada_pitch = rotacion_x
-		
 	if is_instance_valid(audio_timbre_telefono):
 		audio_timbre_telefono.stop() # Cortamos el timbre
 	
@@ -1103,30 +1096,10 @@ func _contestar_telefono() -> void:
 			
 			audio_voz_telefono.play()
 			
-	if is_instance_valid(label_salida):
-		label_salida.visible = true
-		label_salida.text = "[Q] Bloqueado"
-		
-	if is_instance_valid(panel_dialogo):
-		panel_dialogo.show()
-	
-	# Mostramos los subtítulos en la UI de diálogo
-	if is_instance_valid(hud_dialogo):
-		hud_dialogo.get_parent().show() # Aseguramos que el panel sea visible
-		hud_dialogo.text = ""
-		hud_dialogo.bbcode_text = TEXTO_TUTORIAL
-		hud_dialogo.visible_characters = 0
-	
 	print("Tutorial del teléfono reproduciéndose.")
 
 func _on_audio_telefono_terminado() -> void:
-	if hud_dialogo and TEXTO_TUTORIAL != "":
-		hud_dialogo.visible_characters = TEXTO_TUTORIAL.length()
-	
-	await get_tree().create_timer(2.0).timeout
-	if estado_actual == ESTADO_INTERACTUANDO and tutorial_telefono_en_curso:
-		tutorial_telefono_en_curso = false
-		_finalizar_interaccion()
+	tutorial_telefono_en_curso = false
 
 func _abrir_inspeccion_cartel():
 	inspeccionando_cartel = true

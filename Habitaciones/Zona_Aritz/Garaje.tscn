@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bxqkdbvm84j7w"]
 
 [ext_resource type="Script" uid="uid://dj3k04mlkysb0" path="res://Habitaciones/Zona_Aritz/garaje.gd" id="1_f4mrm"]
-[ext_resource type="PackedScene" uid="uid://dfy7deoxk7jqd" path="res://Habitaciones/Zona_Sedou/jugador_importado/player.tscn" id="1_uosmu"]
 [ext_resource type="PackedScene" uid="uid://dnoivugdb17oy" path="res://Habitaciones/Zona_Sedou/muro_troncos.tscn" id="2_spgyc"]
 [ext_resource type="PackedScene" uid="uid://cvjrxg7pnygqd" path="res://Habitaciones/Zona_Sedou/suelo_madera.tscn" id="3_3qvko"]
 [ext_resource type="PackedScene" uid="uid://c3aw50wlnvhri" path="res://Habitaciones/Zona_Aritz/old_car_-_vaz_2107.glb" id="5_iksj0"]
@@ -55,9 +54,6 @@ size = Vector3(1.1812134, 2.4440918, 2.8890686)
 
 [node name="Node3D" type="Node3D" unique_id=1017494380]
 script = ExtResource("1_f4mrm")
-
-[node name="Player" parent="." unique_id=576785281 instance=ExtResource("1_uosmu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0371695, 0.38924086, -2.0083709)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1526630934]
 
